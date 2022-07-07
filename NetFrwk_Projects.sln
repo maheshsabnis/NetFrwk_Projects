@@ -6,9 +6,28 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{554CBBFD-2278-4463-9A44-97DE29589284}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
+		Assignments.md = Assignments.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Types_Conditions", "CS_Types_Conditions\CS_Types_Conditions.csproj", "{10EB5810-8D2C-470E-AB52-C306FC3F2F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_UsingStrings", "CS_UsingStrings\CS_UsingStrings.csproj", "{565040D8-3957-4758-B3FC-F3172312A6B7}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10EB5810-8D2C-470E-AB52-C306FC3F2F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10EB5810-8D2C-470E-AB52-C306FC3F2F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10EB5810-8D2C-470E-AB52-C306FC3F2F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10EB5810-8D2C-470E-AB52-C306FC3F2F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{565040D8-3957-4758-B3FC-F3172312A6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{565040D8-3957-4758-B3FC-F3172312A6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{565040D8-3957-4758-B3FC-F3172312A6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{565040D8-3957-4758-B3FC-F3172312A6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

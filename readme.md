@@ -80,3 +80,27 @@ What is System?
 	- int.parse()
 		- Parse the string into integer
 		- Avoid using it
+6. Version
+	- Major.Minor.BuildNumber.Revision
+	- 1.2.3.4
+	- Each .NET Application has version
+7. Project references
+	- Conatisn List of Stranard as well as Custom Libraries used by the Current Project
+8. Using the Visual Studio Features for Debugging the code
+	- F9 key to apply breakpoints, the execution will be broken from this line onwards
+	- F5, to run the application
+	- F11, to debug each line for each method in the code with method call
+	- F10, debug each line but do not jump to method call for debugging
+9. Divide the code into seperate functions /  methods
+	- A method is gorup of statements which are execute repetedly when the method is called
+	- A method can have input parameter as well as output parameters
+	- If a method does not return anything then use 'void' as return from method
+	- Input parameters to a method are known as 'formal-parameters'
+10. Working with integer values
+	- integer /  interger is always integer, so if you want ot receive the correct mathematical result, the type-cast the division of ingegers and store result into the double
+		- double res = Convert.ToDouble(x,y);
+			- Here x and y are integers
+	- integer * integer many not always within the limit of integer
+		- Note: Make sure that the result is stored either in long or decimal type 
+11. Using Strings
+	- String is a reference type, a class that contains methods for string operations
