@@ -22,3 +22,18 @@
 	- Search, Understand and implement on
 		- Multi-Dimentional Array
 		- Jagged Array
+2. Declare an array and insert data into the array by accepting data from user
+3. Dynamically search data from array by accepting record to search from user
+4. Open google.co.in and serach for James Bond int it. From the James Bond WiKi page copy first two paragrapg and save it in a variable. Perform Following operations on these paragraphs (Today)
+	- Find out count of blanck spaces in the string
+	- Find out count of words in the string
+	- Find out count of statements in the string
+	- Accept an input string from the user e.g. "the" and find out count of "the" in string and its positions
+	- Find out count of vovels (a,e,i,o,u) in the string
+	- Convert first character of each word in string into the uppercase
+	- Print all special characters from the string.                                                           
+5. Declare an ArrayList and add integers, characters, string, decimal, etc. values in it.
+6. Perform following operations on the ArrayList
+	- Add Record in specific index of the ArrayList
+	- Remove Record at a specific Index
+	- Read only strins from the collection   

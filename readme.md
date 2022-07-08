@@ -181,3 +181,35 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 			- Variables
 			- Events
 			- Delegates
+14. .NET Application Execution
+	- APplication Compilation
+		- Comman Language Specification (CLS), using Common Type System (CTS) and Framework Class Library (FCL)
+			- The FCL is referred using 'mscorlib.dll'
+	- Check what application template is under Compilation
+		- .Exe compiled output
+			- Console Apps, WinfoForms, Windows Service
+		- .dll
+			- Class Library Project, ASP.NET WebForms, MVC, Web API
+	- The Compiled output (.exe/.dll) is called as 'Assembly' 
+	- Assembly
+		- Successful Compiled Output from .NET Apps
+			- This contains all namespace(s) (and hence all classes from the project) 
+		- Unit for Execution (Deployment)
+		- We use the assembly for application (aks Code) sharing to client apps in case of .dll assemblies
+		- Technically
+			- It is following
+				- Intermidiate Code (IL) or MSIL
+					- Source-Code Compilation into intermidiate code format
+					- This is common for all .NET Language
+				- Assembly Info aka Manifest
+					- Name
+					- Version
+					- Copyright
+					- ... etc
+				- Metadata
+					- What are the dependencies used by the assembly
+					- e.g.
+						- Some externally referreed assemblies
+			- Use 'ildasm.exe' tool to view the assembly
+				- C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\ildasm.exe
+		 
