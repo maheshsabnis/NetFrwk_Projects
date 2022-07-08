@@ -104,3 +104,80 @@ What is System?
 		- Note: Make sure that the result is stored either in long or decimal type 
 11. Using Strings
 	- String is a reference type, a class that contains methods for string operations
+12. Concept of .NET Types
+	- System.Type class
+		- Defining the mechanism for storing data in Memory (Managed-Heap) in well define format as follows
+			- The DataType of the value
+			- The Actual Value
+	- System.Object
+		- The Highest-Level Type in .NET
+		- The 'object' a keyword
+		- Each Data Types (Standard or user defined) can be represented as object
+	- Boxing and UnBoxing
+		- Storing value type into reference type is Boxing
+			- e.g.
+				- int i = 10;
+				- object obj = i; 
+		- Retrieving value type from reference type is UnBoxing, make sure that the type of data stored in object must be known 
+			- e.g.
+				- int j = (int)o; 
+NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME INITIAL VALUE FOR IT
+	- FOR REFERENCE TYPES YOU CAN PROIVE INTIAL VALUE AS 'null' BUT THEN MAKE SURE THAT WHILE EXECUTING THE CODE, THE REFERENCE TYPE HAS SOME 'DEFINIT DATA IN IT' OTHERWISE APP WILL CRASH WHILE EXECUTING  
+13. The Collections
+	- The appliaction needs to store Huge amount of data so that it can be processed, shared across various applications
+	- To Add or precess data from Collections using Loops
+		- for..loop
+			- for(counter; counter condition against length of recocrds; counter increament)
+				{
+				}
+		- foreach..loop
+			- Recommended fro Collections
+			- foreach(record in collection)
+			  {
+				  PROCESS
+			  }
+		- while..loop
+		- do..while
+	- The 'Array'
+		- Language Agonostic mechanism of storing large data
+		- System.Array class
+			- When the array is defined using following syntax
+				- DATA-TYPE [] IDENTIFIER;
+				- e.g.
+					- int [] arr;
+				- It will become an instance of System.Array by default 
+	- Collections are standard Classes used to store huge data in it
+		- There is no limit for storing data in array
+		- Each Entry in collection is stored as an 'object'
+			- The Collection 'Boxes' the data while storing the data in it
+			- This means that the while retrieving data from collecction the 'Unboxing' must be used
+		- System.Collection Namespace
+			- ArrayList
+			- Stack
+			- Queue
+			- LinkedList
+			- ... etc
+	- Generic Collections
+		- Collections based on Concept of Generics introduced in .NET Frwk 2.0
+		- Generics (Templates in C++)
+			- A Type-Safe Arrangement of data stored for .NET Apps
+			- The Type of data that is to be stored in collection will be informed to .NET Frawk at Compile time
+			- For the  collection type seperate copies of the same collection for different data types will be created in binary form in memory for Binary re-usability
+			- e.g.
+				- List<T>, the generic List class
+				- List<int>, list will have only 'integers'
+				- List<string>, list will have only string
+				- Hence No Boxing anmd UnBoxing
+		- System.Collections.Generics namespace
+			- List<T>, Stack<T>, Queue<T>, LinkedList<T>
+				- The 'T' is s templatre parameter that will be set to premtive data type or custom datatype
+			- Key Value Pairs
+				- Dictionary<K,V>
+					- K and V are 'T' only
+		- We Can have Generic
+			- Classes
+			- Methods
+			- Interfaces
+			- Variables
+			- Events
+			- Delegates

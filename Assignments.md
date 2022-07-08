@@ -1,4 +1,5 @@
 # Assignments
+# Date: 07-July-2022
 
 1. Use the following string
 	- "Thor is a 2011 American superhero film based on the Marvel Comics character of the same name. Produced by Marvel Studios and distributed by Paramount Pictures,[N 1] it is the fourth film in the Marvel Cinematic Universe (MCU). It was directed by Kenneth Branagh, written by the writing team of Ashley Edward Miller and Zack Stentz along with Don Payne, and stars Chris Hemsworth as the title character alongside Natalie Portman, Tom Hiddleston, Stellan Skarsgård, Colm Feore, Ray Stevenson, Idris Elba, Kat Dennings, Rene Russo, and Anthony Hopkins. After reigniting a dormant war, Thor is banished from Asgard to Earth, stripped of his powers and his hammer Mjölnir. As his brother Loki (Hiddleston) plots to take the Asgardian throne, Thor must prove himself worthy."
@@ -15,3 +16,9 @@
 	- What is 'var' in C# for variable declarations
 3. Explore the 'System.Math' class and try its methods	
 	- e.g. Sin(), Cos(), Tan(), Abs(), Average(), etc.
+
+# Date: 08-July-2022
+1. Self-Study
+	- Search, Understand and implement on
+		- Multi-Dimentional Array
+		- Jagged Array

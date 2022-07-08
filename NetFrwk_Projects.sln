@@ -5,13 +5,21 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{554CBBFD-2278-4463-9A44-97DE29589284}"
 	ProjectSection(SolutionItems) = preProject
-		readme.md = readme.md
 		Assignments.md = Assignments.md
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Types_Conditions", "CS_Types_Conditions\CS_Types_Conditions.csproj", "{10EB5810-8D2C-470E-AB52-C306FC3F2F3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_UsingStrings", "CS_UsingStrings\CS_UsingStrings.csproj", "{565040D8-3957-4758-B3FC-F3172312A6B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Boxing_unBoxing", "CS_Boxing_unBoxing\CS_Boxing_unBoxing.csproj", "{5824663E-3373-4EF7-AC65-BDAEEFCCD6A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Arrays", "CS_Arrays\CS_Arrays.csproj", "{B39F6638-1404-4715-8A79-1664F8745DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Array_Methods", "CS_Array_Methods\CS_Array_Methods.csproj", "{E0F516CC-A4BA-41D4-8C9E-8D20C31FC86C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Collections", "CS_Collections\CS_Collections.csproj", "{34C01249-AD89-45B7-9944-8DF265397D06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{565040D8-3957-4758-B3FC-F3172312A6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{565040D8-3957-4758-B3FC-F3172312A6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{565040D8-3957-4758-B3FC-F3172312A6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5824663E-3373-4EF7-AC65-BDAEEFCCD6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5824663E-3373-4EF7-AC65-BDAEEFCCD6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5824663E-3373-4EF7-AC65-BDAEEFCCD6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5824663E-3373-4EF7-AC65-BDAEEFCCD6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39F6638-1404-4715-8A79-1664F8745DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39F6638-1404-4715-8A79-1664F8745DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39F6638-1404-4715-8A79-1664F8745DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39F6638-1404-4715-8A79-1664F8745DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F516CC-A4BA-41D4-8C9E-8D20C31FC86C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F516CC-A4BA-41D4-8C9E-8D20C31FC86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F516CC-A4BA-41D4-8C9E-8D20C31FC86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F516CC-A4BA-41D4-8C9E-8D20C31FC86C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C01249-AD89-45B7-9944-8DF265397D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C01249-AD89-45B7-9944-8DF265397D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C01249-AD89-45B7-9944-8DF265397D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C01249-AD89-45B7-9944-8DF265397D06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
