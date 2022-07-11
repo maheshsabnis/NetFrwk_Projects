@@ -30,6 +30,7 @@ namespace CS_UsingList
                         Console.WriteLine("Enter String that is to be added in list");
                         string value = Console.ReadLine();
                         lstStrings.Add(value);
+                        
                         break;
                     case 2:
                         Console.WriteLine("Enter record to search from List");

@@ -11,10 +11,10 @@
 	- Accept x and y from end-user
 4. Use the Conditional Statement to validate inputs accepted from the user.
 	- Make sure that x or y are not negative ot 0
-2. Self-Study
+5. Self-Study
 	- What is 'ref', 'out', 'params' for method parameters in C#?
 	- What is 'var' in C# for variable declarations
-3. Explore the 'System.Math' class and try its methods	
+6. Explore the 'System.Math' class and try its methods	
 	- e.g. Sin(), Cos(), Tan(), Abs(), Average(), etc.
 
 # Date: 08-July-2022

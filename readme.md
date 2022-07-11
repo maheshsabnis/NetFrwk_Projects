@@ -212,4 +212,84 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 						- Some externally referreed assemblies
 			- Use 'ildasm.exe' tool to view the assembly
 				- C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\ildasm.exe
-		 
+
+# C# Object Oriented Programming
+
+1. Class
+	- Keyword as 'class'
+	- Class Contains Following
+		- Data Members
+		- Member Functions aka Methods
+		- C# for all .NET Languages
+			- Events
+			- Properties
+	- Access Specifiers
+		- private, default for each class member of the class, accessible only in the declaring class
+		- public, accessible everywhere
+		- protected, accessible in declaring class and derived class of the declaring class
+		- C# 
+			- internal, accessible in each class of the the namespace of the declaring class
+			- protected internal, like 'internal' but the accessibilty is also possible in the derived class of the different namespace
+				- e.g.
+					- Class A in namespace N1 conatins m1() as 'protected internal' method
+					- Class B in namespace N2 is derived from class A of N1, then the m1() is also accessible in class B of N2
+	- Syntaxes for OOPs Concepts
+		- Inheritence
+			- Design a Specific class from General Purpose class
+				- All Public and Protected members of the Base clas are accessible in deribed class
+				- Provide Following Features
+					- Reusability
+					- Extensibility
+			- A Class can have 'Only-One' base class
+			- Single Inheritence, 
+				- A Class can have 'Only-One' base class, aka Single Inheritence
+				- e.g.
+					- class Base {}
+					- class Derive : Base {}
+			- Horizontal Inheritence,
+				- Multiple classes are derived from Same base class
+				- e.g.
+					- class Base{}
+					- class Derive1: Base {}, class Derive2:Base{},...
+			- Hierarchical aka Multi-Level Inheritence
+				- The Derive class is also a base class for next derive class
+				- e.g.
+					- class Base {}
+					- class Derive:Base{}
+					- class Derive2:Derive{}
+		- Polymorphism
+			- Power of OOPs because of Inheritence
+			- Same Methods with Same Signeture in Derive and Base class but with different implementation for Extensibility
+				- Method Overriding (Strictly not Method Overloading, it is not Polymorphism)
+				- Compile Time Polymorphism
+		
+	- Keywords
+		- Access Modifiers, used to define a behavior of the member of the class
+			- static, abstract, virtual, override, new, sealed 
+		- The Static Member
+			- The 'static' keyword
+			- Member is accesible directly using class name 
+			- Within the class, its is accessible only inside the static method
+			- Why?
+				- Use this to share common data and implementation (logic) across all methods of the class
+		- The Abstract classs
+			- Class that is not instantiated
+			- Why?
+				- Used to define blue print of implementation so that all derived classes can use it as it is or override it
+			- Class can have virtual methods and abstract methods
+				- The 'virtual' and 'abstract' are keywords
+					- virtual and abstract methods MUST be overriden
+					- IMP: Virtual methods can be as it is used by derived classs, but abstract methods MUST be overriden by the derived class with implementation, else derive class MUST be made as abstract class 
+		- The Sealed class
+			- The 'sealed' is a keyword
+			- Why?
+				- Used to create a final class with final implementation which cannot be derived
+		- Method Shadowing
+			- Used in case when Base and derived class have same method with same signeture
+			- In derive class we can make the method as 'new' to shadow it (or hide it) so that it cannot be called using derived class instance
+	- C# Specifications
+		- The class is by default internal 
+		- All members of the class are private by default
+		- The top level class can not be private, but the public class can contain a private class in it
+			- public class MyClass {  private class MyInnerClass {  }   }
+		
