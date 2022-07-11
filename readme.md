@@ -261,6 +261,7 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 			- Power of OOPs because of Inheritence
 			- Same Methods with Same Signeture in Derive and Base class but with different implementation for Extensibility
 				- Method Overriding (Strictly not Method Overloading, it is not Polymorphism)
+					- Static Polymorphism Method Overloading (No where present) and Dynmaic Polimorphism (Actual Polymorphism)
 				- Compile Time Polymorphism
 		
 	- Keywords
@@ -280,6 +281,7 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 				- The 'virtual' and 'abstract' are keywords
 					- virtual and abstract methods MUST be overriden
 					- IMP: Virtual methods can be as it is used by derived classs, but abstract methods MUST be overriden by the derived class with implementation, else derive class MUST be made as abstract class 
+					- Virtaul Methods can hve implementation but abstract method cannot have any implmentation
 		- The Sealed class
 			- The 'sealed' is a keyword
 			- Why?
