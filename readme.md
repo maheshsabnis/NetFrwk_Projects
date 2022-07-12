@@ -295,3 +295,18 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- The top level class can not be private, but the public class can contain a private class in it
 			- public class MyClass {  private class MyInnerClass {  }   }
 		
+# OOPs Practically
+- Class MUST be instantiated
+	- e.g. ClsEmployee is the the class, then its instanbce will be 
+		- ClsEmployee emp = new ClsEmployee(); 
+			- The default constructor willbe invoked
+			- The constructor is a method havig same name as trhe name of the class but this will not have any return type
+			- If class is not instantiated the following runtime error will occur
+				- "'Object reference not set to an instance of an object."
+- In the class we cannot have same method with same signeture
+- In case of inheritence if the base class is have paramerized constructor then the derived class MUST have the parameterized ctor and pass parameters to base class ctor 
+- If the base and derived classes has same method with same signeture, then consider implementing one-of-the following solution
+	- If the Derive class method wants to override the base class method method by
+		- Either using base class implementation as-it-is
+		- OR completly provide new implmentation
+	 - Then make the base class method as 'virtual'
