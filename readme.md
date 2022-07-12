@@ -334,4 +334,13 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- c.method1(d2); -- substitute the derive for base
 	- This is Dynamic Polymorphism, because whiel executing method1(), the runtime decides which instance is used with its implementation
 
-	- If a class is derive from Abstract base class that is having abstract methods, then the derive class MUST override all abstract methods of the base class, else derive classMUST be made as abstract class 
+	- If a class is derive from Abstract base class that is having abstract methods, then the derive class MUST override all abstract methods of the base class, else derive classMUST be made as abstract class
+- C# additional class features
+	- Properties
+		- They are 'get' and 'set' method wrappers written to initialize private data members of the class
+			- 'set' to set value for private data member
+			- 'get' to return value of the private data member
+		- C# 3.0
+			- Auto Implemented properties
+				- They are the direct public properties created for the class where the Compiler write implicit backing fields (aka private members) for it
+				- We cannot write an custom validation logic for get set easily 

@@ -40,7 +40,7 @@
 
 # Date:12-July-2022
 
-1. Varify the Following by Taking your own experience w.r.t. OOPs concepts
+1. Varify the Following by Taking your own experience w.r.t. OOPs concepts (Implement First 5 problemem Statements Today)
 	- Can we have Private and Protectd virtual methods in Abstract class?
 	- If Yes, then with which access specifier should we use to overrride these method from derived class?
 	- Can we have static members in abstract class?
@@ -50,5 +50,30 @@
 	- Can sealed class contain Protected methods?
 	- Can we have virtual or abtsract methods in sealed class?
 	- Can the sealed class be a derived class?
+	- Can we have static COnstructors in a class and if yes then how many times they are called and what will be the use of it?
+	- Can we have static constructor and methods in Abstract class?
+	- Can we have static constructor and methods in sealed class?
+2. Complete the Assignment from the Applications folder with Following (MUST be completed by Thursday i.e. 14-July-2022)
+	- Complete EmoployeeLogic class for CRUD operation
+	- Create Classes derived from Employee for various designations as follows
+		- Manager
+			- ProjectAllowance
+			- TravelAllowance
+		- SalesManager Derived from Manager
+			- PetrolAllowance
+			- HotelAllowance
+			- CustomExpenses
+		- Engineer
+			- OverTime
+			- OverTimeHours
+	- Calculate GrossSalary for each Emplyee	as
+		- BasicSalary + Various Allowances as per the Designation
+	- Calculate Tax for each Employee based on the GrossSalary as
+		- 1Lac to 5 Lacs, 20% of GrossSalary
+		- >5 Lacs to 10Lcs, 30% of GrossSalary
+		- >10Lacs, 40% of GrossSalary
+	- Calculate NetSalary as GorssSalary -  Tax
+	- Print NetSalary in Words
+	- Create an Accounts Class that will Calculate Salary for Each Employee
 
 
