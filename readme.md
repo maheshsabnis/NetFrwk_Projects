@@ -310,3 +310,28 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- Either using base class implementation as-it-is
 		- OR completly provide new implmentation
 	 - Then make the base class method as 'virtual'
+	- Using the 'Override' means the polymorphic behavior 
+	- Use 'new'
+	 
+
+- Using the Dynamic Polymorphism
+	- At runtime inform the execution engine about the type of object which contains data and let the runtime decides which actual implmentation is to be invoked for the execution  
+	- This is implementing using the 'abstract' class tht contains 'virtual' and 'abstract' methods, these methods are overriden by the derived class
+		- NOTE: Abstract class cannot be instantiated
+	- In case of Inheritance, if an base class is passed as input parameter to a method, then while accessing this method we can pass an instnace of 'any derived class of the base class' as input parameter to a method
+	- e.g.
+		- class Base {}
+		- class Derive1:Base {}
+		- class Derive2: Base {}
+		- class Client
+		{
+			 method1( Base b ){.... logic ....}
+		}
+		- Derive1 d1 = new Derive1();
+		- Derive2 d2 = new Dervice2();
+		- Client c = new Client()
+		- c.method1(d1); -- substitute the derive for base
+		- c.method1(d2); -- substitute the derive for base
+	- This is Dynamic Polymorphism, because whiel executing method1(), the runtime decides which instance is used with its implementation
+
+	- If a class is derive from Abstract base class that is having abstract methods, then the derive class MUST override all abstract methods of the base class, else derive classMUST be made as abstract class 

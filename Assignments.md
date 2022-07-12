@@ -37,3 +37,18 @@
 	- Add Record in specific index of the ArrayList
 	- Remove Record at a specific Index
 	- Read only strins from the collection   
+
+# Date:12-July-2022
+
+1. Varify the Following by Taking your own experience w.r.t. OOPs concepts
+	- Can we have Private and Protectd virtual methods in Abstract class?
+	- If Yes, then with which access specifier should we use to overrride these method from derived class?
+	- Can we have static members in abstract class?
+	- Can the derived class be an abstract class?
+	- Can we have abstract and virtual methods in non-abstract class?
+	- Can we type-cast the derive class instance to base class?
+	- Can sealed class contain Protected methods?
+	- Can we have virtual or abtsract methods in sealed class?
+	- Can the sealed class be a derived class?
+
+

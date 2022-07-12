@@ -86,7 +86,8 @@ namespace CS_Inheritence
         /// <returns></returns>
         public override decimal GetSalary()
         {
-            return base.GetSalary() + customerAllowance + hotelAllownace;
+           return base.GetSalary() + customerAllowance + hotelAllownace;
+             
         }
     }
 
