@@ -355,3 +355,58 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- If more than one interfaces has same method with same signeture, then to provide different implementastion for each method in class, let the class implement these interface explicitly
 	- A class can derive from "One Base class" and can implement multiple interfaces
 		- This is NOT MULTIPLE INHERITENCE
+
+- C# Some Important COncepts
+	- The 'delegate'
+		- Used to Execute a method with its reference
+			 - Declare a delegate using 'System.Delegate' or using 'delegate' keyword at namespace level
+			 - Make sure that the Signeture of the delegate MUST match with the Signeture of the method which will be invoked by the delegate
+		- Used to declare an event based on condition
+			- This is a special delegate that notifies that somethinmg has happened
+		- Used to handle Asynchronous execution of a method as per the requirement
+	- The 'event'
+		- The event MUST be defined using delegate
+		- The return type of the delegate MUST be void if its is used to declare an event
+		- The 'event' is a keyword in C#
+		- The event is raised conditionally
+		- There MUST exist an class that will be notified when an event is raised  
+	- The 'Generic'
+
+- C# 3.0 Programming Enhancements with .NET Frwk 3.5+
+	- The Local Variable Type Inferience
+		- Declare a local variable for a 'BLOCK-SCOPE' using 'var'
+		- This declaration MUST be initialize
+		- The Typeof 'var' will be defined based on the initial value
+		- e.g.
+			- var x = 10; 
+				- Here x is integer
+			- var str = "ABC";
+				- here str in string
+	- Anonymous Propeties
+	- Anonymous Types
+		- A Class without Name
+		- Used to store result from Language Integrated Query (LINQ) at runtime in encapsulated format
+			- var obj = new {id=11, name="ddd", age=34};
+				- The 'obj' will be an instance of the anounymous type that has properties id, name, and age
+	- Extension Method
+		- Adding a method externally into a class w/o modifying the class
+		- Allows developer to enhance a class by adding a method w/o asking the developer to change the existing class
+		- Allows developer to write enhanced methods for standard .NET Classes
+		- This is the resaon new .NET Versions are available
+		- Rules for Extension Methods
+			- The class that contains Extension method MUST be 'static'
+			- The method which is used as extension method MUST be 'static'
+			- The First Parameter of this method MUST be 'this' referred reference of the 'class' for which the extension method is written 
+			- E.g.
+				- public sealed class MyClass { fileCreate(){} }
+				- public static class FileEhnancement { static encypt(this MyClass c){....} decypt(){}, compress(){} }
+					- The encypt() is an extension method for MyClass
+				- Use following code to call extension Method
+					- MyClass m = new MyClass();
+					- m.encypt(); invoke an extension method
+				
+	- Lambda Expression 
+		- A Simplication for Method passed as parameter to another method
+		- This is a Simple Syntac for Anonymous Methods
+		- They are better used when a method has a delegate as in input parameter
+		- This is used espicially while using Language Integrated Queries (LINQ)
