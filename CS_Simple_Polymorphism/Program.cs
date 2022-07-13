@@ -21,6 +21,8 @@ namespace CS_Simple_Polymorphism
             s = new Circle(0,0);
             ((Circle)s).SetRadious(100); // Casting the BAse class to Derive class (Down-Casting)
             gateway.PrintArea(s);
+
+     
             
 
 

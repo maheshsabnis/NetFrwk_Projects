@@ -344,3 +344,14 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 			- Auto Implemented properties
 				- They are the direct public properties created for the class where the Compiler write implicit backing fields (aka private members) for it
 				- We cannot write an custom validation logic for get set easily 
+- Usie of Interfaces
+	- Interface is a type that has method definitions
+	- Interface is implemented by class either Implicitly or Explicitly 
+		- Implicit Implementation: The class is owner of the methods
+		- Explicit Implementation: The class contains method definition but they are owned by interface
+	- Rule
+		- If a class implements an interface then all methods of the interface MUST be implemenetd by the class else the compiler error will be generated 
+	- A class can implement Multiple interfaces
+		- If more than one interfaces has same method with same signeture, then to provide different implementastion for each method in class, let the class implement these interface explicitly
+	- A class can derive from "One Base class" and can implement multiple interfaces
+		- This is NOT MULTIPLE INHERITENCE
