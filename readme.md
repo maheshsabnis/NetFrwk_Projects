@@ -371,6 +371,12 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- The event is raised conditionally
 		- There MUST exist an class that will be notified when an event is raised  
 	- The 'Generic'
+		- Class
+		- Interface
+		- Data Member
+		- Method Parameter
+		- Event
+		- Delegate
 
 - C# 3.0 Programming Enhancements with .NET Frwk 3.5+
 	- The Local Variable Type Inferience
@@ -382,7 +388,7 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 				- Here x is integer
 			- var str = "ABC";
 				- here str in string
-	- Anonymous Propeties
+	- Auto-Implemented Propeties
 	- Anonymous Types
 		- A Class without Name
 		- Used to store result from Language Integrated Query (LINQ) at runtime in encapsulated format
