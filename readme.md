@@ -416,3 +416,16 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- This is a Simple Syntac for Anonymous Methods
 		- They are better used when a method has a delegate as in input parameter
 		- This is used espicially while using Language Integrated Queries (LINQ)
+
+# SQL Server Programming
+
+- E-Comm App
+	- ProductName, ManufacturerName, CustomerName, CustomerAddress, City, State, ProductCategory, SubCategory, OrdreredQuantity,UnitPrice, TotalPrices, OrderDate, ShippingDate, ExpectedDelivaryDate, ActualDeliveryDate, PaymentType, ProductDescription  
+
+- Statements
+	- Data Definition Language (DDL)
+		- Define Database Objects
+			- Create Database|Table|View|Stored Procedure | Function | Cursor
+			- ALter Database|Table|View|Stored Procedure | Function | Cursor
+	- Data Manipulation Language (DML)
+	- Data Control Language (DCL)
