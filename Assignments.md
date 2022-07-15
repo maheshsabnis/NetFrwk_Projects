@@ -81,7 +81,7 @@
 
 # Date:15-july-2022
 1. Create Category Table with CategoryRowId (identity), CategoryId varcharchar (Primary Key), CategoryName varchar.
-2. Create Product Table with productRowId(Identity), ProductId varchar(Primary Key), ProductName varchar, Price int,ManufacturerName varchar, ProductId (Foreign Key)
+2. Create Product Table with productRowId(Identity), ProductId varchar(Primary Key), ProductName varchar, Price int,ManufacturerName varchar, CategoryId (Foreign Key)
 	- Note All Columns are Not Null
 3. Insert Data in both table
 4. Perform Following Operations on these tables
