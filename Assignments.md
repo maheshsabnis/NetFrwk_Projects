@@ -79,3 +79,11 @@
 # Date:13-July-2022
 1. Convert the Lab-4 of date 08-July-2022 for string operations by creating extension methods for 'string' class
 
+# Date:15-july-2022
+1. Create Category Table with CategoryRowId (identity), CategoryId varcharchar (Primary Key), CategoryName varchar.
+2. Create Product Table with productRowId(Identity), ProductId varchar(Primary Key), ProductName varchar, Price int,ManufacturerName varchar, ProductId (Foreign Key)
+	- Note All Columns are Not Null
+3. Insert Data in both table
+4. Perform Following Operations on these tables
+	- Create a Procedure that will accept CategoryName and all products of these category will be returned, The SP must check the CategoryName for not null and wheather it is present in Catefgory Table, if it is null or length is 0 or its is not present into the CategoryTable, return 'the CategoryName is invalid or not found' error message     
+

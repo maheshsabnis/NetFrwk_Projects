@@ -48,3 +48,6 @@ Mohit, Rohan, Kushagra, Viplav
 		- Manufacturer wise Items Sold
 		- Category wise items sold
 		- Accpeted and Reject Deliveries
+
+
+Task 1: Create Stored Procs for CRUD Operations on Project Tables

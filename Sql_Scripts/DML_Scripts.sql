@@ -8,6 +8,8 @@ Insert into Department Values (20, 'HRD', 'Pune', 100);
 Insert into Department Values (30, 'Accts', 'Pune', 500);
 Insert into Department Values (40, 'Trag', 'Pune', 20);
 Insert into Department Values (50, 'Support', 'Pune', 900);
+Insert into Department Values (60, 'Admin', 'Pune', 100);
+select * from Department;
 
 -- Insert Records into Employee
 insert into Employee Values (101, 'Mahesh', 'Director', 900000, 10);

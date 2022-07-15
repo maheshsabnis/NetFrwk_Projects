@@ -51,3 +51,14 @@ Alter Table Employee Drop Column Designation;
 -- Means the Primary Key of Table Being Dropped MUST not be used as Foreign Key 
 -- in Any other table using 'references'
 Drop table Employee;
+
+-- Table with Auto-Increment value
+Create Table Error_Logger (
+   Error_Id int Identity (1,1) Primary Key,
+   Error_Number int not null,
+   Error_Message varchar(6000) Not Null,
+   Error_Severity int not null,
+   Error_State int not null
+);
+
+ Drop Table Error_Logger;

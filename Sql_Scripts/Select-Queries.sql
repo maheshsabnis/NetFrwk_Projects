@@ -37,6 +37,42 @@ select * from Employee;
 select DeptNo, Max(Salary) as Salary from Employee  
 where Salary < (Select Max(Salary) From Employee)  group by DeptNo;
 
+-- Joins
+-- Why?
+-- Used in case when data is scattered across various tables for avoiding redundancies 
+-- and from the application (C#/ASP.NET) you want to read data from these tables
+-- with developer and user-friendly 
+select * from Department;
+-- Select Statement with Multiple Tables 
+Select EmpNo, EmpName, DeptName, Salary, Designation, Location
+From Department, Employee
+Where Department.DeptNo = Employee.DeptNo;
+
+-- Inner Join 
+-- Default for Select Statements with Multiple Tables where only matching data
+-- will be returned 
+Select EmpNo, EmpName, DeptName, Salary, Designation, Location
+From Department, Employee
+Where Department.DeptNo = Employee.DeptNo;	
+-- Left Join
+-- Select all records from the left table and match records from the right table
+-- If the right table does not have any matching records for left side table
+-- then NULL Rcords will be generated
+-- Department is Left and Employee is Right
+Select EmpNo, EmpName, DeptName, Salary, Designation, Location
+From Department
+Left Join Employee
+On
+Department.DeptNo =  Employee.DeptNo;
 
 
+-- Right Join
+-- The Rows from Right Table will be read for whihc match from left table
+-- will be extracted but for non matched values for right table
+-- Null records will be generated 
+Select EmpNo, EmpName, DeptName, Salary, Designation, Location
+From Department
+Right Join Employee
+On
+Department.DeptNo =  Employee.DeptNo;
 
