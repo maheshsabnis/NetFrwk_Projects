@@ -429,3 +429,116 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 			- ALter Database|Table|View|Stored Procedure | Function | Cursor
 	- Data Manipulation Language (DML)
 	- Data Control Language (DCL)
+
+# Performing Data Access using ADO.NET
+	- Set of classes those are used to perform Data Access for .NET Apps
+	- Connected Approach
+		- Client App is always connected to Database
+		- Client Choose when to close DB Connection
+	- Disconnected Approach
+		- Client gest connected with database
+		- Read data from Table
+		- Stored data in Client app's Memory
+		- Isolate itself from DB
+		- Client basically update data in memory
+		- Connect back to Database
+		- Send Updated data
+	- Namespace
+		- System.Data
+		- For SQL Server
+			- System.Data.SqlClient, namespace provider by Microsoft
+	- System.Data Object Model
+		- Both Connected and Disconnected Approach
+			- DbConnection
+				- BAse class for Establising Connection with DB
+			- DbCommand
+				- Base class for Sending SQL Statements and SP (all are commmands) to perform Read/Write operations with Database
+		- Only in Connected Approach
+			- DbReader
+				- A Cursor that stores data returned from Database using 'Select Statements'
+		- Disconnected Approach
+			- DataSet
+				- In-Memory Database on Client side to store data from Database
+				- Collection of DataTables
+				- Collection of DataViews
+				- Collection of DataRelations
+				- DataViewCollection, a Collection of Views 
+			- DataTableCollection
+				- Collection of DataTables 
+			- DataTable
+				- Table inside the DataSet
+				- DataColumnCollection
+					- Schema of table
+				- DataRowCollection
+					- Data in the table
+			- DataColumn
+				- A Single Column in DataTable on Client-Side
+			- DataRow
+				- A Row in DataTable
+			- DataViewCollection
+			- DataView
+				- A View created from On-or-More Tables from DataSet 
+			- DataRelationCollection
+				- Collection of relations (Primary-Key-Foreign-Key) across Tables on Client-Side
+			- DataRelation
+				- An Actual Relation Object
+	- SqlServer
+		- System.Data.SqlClient
+			- SqlConnection
+				- Derived from DbConnection for Connection Management with SQL Server Database
+			- SqlCommand
+				- Derived From DbCommand for Command Management
+			- SqlDataReader
+				- Derived from DbReader for Storeing result of Select Query from SQL Server Database
+		- Disconnected Approach Object for SqlServer
+			- SqlDataAdapter
+				- Derived from DbAdapter
+			- SqlCommandBuilder
+				- Dreived From DbCommandBuilder 
+	- Coding Style with Connected Approach with SQL Server
+		- Connect to Db using SqlConnection class
+			- Pass the Database Connection String
+				- e.g.
+					- Connection String fot SQL Server Windows Integrated User aka Windows User thas is havinbg access with Sql Server database 
+						- Data Source=[SERVER-NAME|IP ADDRESS of Server Machine];Initial Catalog=[DATABASE-NAME];Integrated Security=SSPI;
+					- if using SQL Server Authentication
+						- Users created and Sored in SQL Server Database
+						- E.g. User Id='sa' and Password='sa'
+						- Connection  String will be
+							- Data Source=[SERVER-NAME|IP ADDRESS of Server Machine];Initial Catalog=[DATABASE-NAME];User Id=[USER-NAME];Password=[PASSWORD];
+					- Further References
+						- https://www.connectionstrings.com/microsoft-data-sqlclient/
+		- Methods of SqlConnection
+			- Open(), open connection
+			- Close(), close connection
+		- Properties
+			- Command
+				- This is used to accept the SqlCommand Object that contains the SQL Statement or SP name
+			- State
+				- Current state of the Db Connection  
+			- ConnectionString
+				- Accepts Connection string to connect to Database
+	- SqlCommand Object
+		- Properties
+			- CommandText	
+				- SQL Statement or SP Name
+			- CommandType
+				- Where the Command has the 'CommandText' as SQL Statement or Stored Proc (Default is SQL Statement)
+		- Methods
+			- ExecuteReader()
+				- Used with the CommandText is 'Select' Statement
+				- Returns an instance fo SqlDataReader object which is a cursor
+			- ExecuteNonQuery()
+				- Used when CommandText is DML Statement (INSERT/UPDATE/DELETE)
+				- Returns a non-zero number that represents number of records affected in Table
+			- ExecuteScalar()
+				- Used when the CommandText and SP Or the Select Statement that return scalar values e.g. Sum(), Avg(),Count(), Min(), Max(), etc.  
+			- ExecuteXmlReader()
+				- USed when the CommandText select statement is returing XML Data
+	- SqlDataReader
+		- Read() method to read data from Cursor
+		- This is Read-Only-Forward-Only cursor
+			- Starts from First Record in Cursor and advances itself to End-of-Records in Cursor
+		- End()
+			- Stop the cursor reading and release the pointer that is reading recorsd from the Cursor
+				
