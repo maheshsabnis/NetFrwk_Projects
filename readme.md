@@ -542,3 +542,20 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- End()
 			- Stop the cursor reading and release the pointer that is reading recorsd from the Cursor
 				
+- Data Access Programming Practices
+	- Since the .NET App connects to SQL Server Database, its is an external resource
+	- The .NET App may crash if an external resourcxe is not responding
+	- To Prevent the .NET app from Crash, use an exception Handling
+	- try{... CODE..TO-EXECUTE...}catch(Exception ex) {...CODE...To...HANDLE-EXCEPTION....}finally {...CODE..THAT..WILL..BE..EXECUTED..IN...CASE...OF...TRY...EXECUTION...OR...CATCH...EXECUTION}
+	- catch() block, that will habdle the execution and will inform to runtime that code is successfuly Executed
+	- We can also 'thow' the error message to make sure that the Application can show the error message to client
+	- try
+	{
+	   ...
+	}
+	catch(Exception ex)
+	{
+		throw ex;
+	}
+	- We can have Nested try
+		- try {  try { try { } } } catch(Exception ex){}

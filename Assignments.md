@@ -87,3 +87,10 @@
 4. Perform Following Operations on these tables
 	- Create a Procedure that will accept CategoryName and all products of these category will be returned, The SP must check the CategoryName for not null and wheather it is present in Catefgory Table, if it is null or length is 0 or its is not present into the CategoryTable, return 'the CategoryName is invalid or not found' error message     
 
+# Date: 18-July-2022
+
+1. Complete all CRUD Operations for DepartmentDataAccess from 'Application.DataAccess' project and Complete Application.UI project by accessing The Application.DataAccess to complete all Operations usinbg Switch-Case
+2. Repeate the for Employee Table
+3. Self-Study	
+	- Please find-out the number of SqlDataRedaers active at a time over a sinbgle DB Connection
+	- Explore SqlBulkCopy Operations (Show on 21-July-2022)
