@@ -94,3 +94,9 @@
 3. Self-Study	
 	- Please find-out the number of SqlDataRedaers active at a time over a sinbgle DB Connection
 	- Explore SqlBulkCopy Operations (Show on 21-July-2022)
+
+# Date: 19-July-2022
+1. Using the DLL approach for Entitie like Department and Employee clases and IDataAccess<TEntity, int TPk> aprroach for Data Access, perform CRUD Operations on Department And Employee Tables usinf Disconnected Architecture
+	- A DLL for Employee and Department
+	- A DLL for DataAccess for Department and Employee for Disconnected Architectire for CRUD Operations 
+	- A Console App for Read/Write Operations using Switch Case by Accepting Data from End-User and Perform R/W operatrion using both DLLs referred into the Console Application

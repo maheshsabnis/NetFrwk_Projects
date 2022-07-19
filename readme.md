@@ -634,5 +634,7 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- Search record based on P.K.
 		- Remove
 			- Ds.Tables["TABLE-NAME"].Delete(DrFind);
+		- Mark the Searched Row For Deletion
+			- DrFind.Delete();
 		- Call Command Builder
 		- Update
