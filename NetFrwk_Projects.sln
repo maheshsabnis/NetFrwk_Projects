@@ -68,6 +68,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_UsingExceptions", "CS_Us
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UI", "Application.Console.UI\Application.UI.csproj", "{50FD29F4-B7D0-41AA-9F4A-275D4C68DA0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Using_StoredProcs", "CS_Using_StoredProcs\CS_Using_StoredProcs.csproj", "{9E9E77AF-678D-40A2-9211-3AB88EC5986D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -170,6 +172,10 @@ Global
 		{50FD29F4-B7D0-41AA-9F4A-275D4C68DA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50FD29F4-B7D0-41AA-9F4A-275D4C68DA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50FD29F4-B7D0-41AA-9F4A-275D4C68DA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E9E77AF-678D-40A2-9211-3AB88EC5986D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E9E77AF-678D-40A2-9211-3AB88EC5986D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E9E77AF-678D-40A2-9211-3AB88EC5986D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E9E77AF-678D-40A2-9211-3AB88EC5986D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -191,6 +197,7 @@ Global
 		{25D09393-D584-48DA-BF72-21CC764D5584} = {EB986505-F620-4DE7-8063-9EFB4FAB19DC}
 		{C41F3684-C91A-4BC5-8AEC-F9E0F7693EF4} = {71FF8B87-0475-46D8-9A34-2A4D244F7A34}
 		{50FD29F4-B7D0-41AA-9F4A-275D4C68DA0D} = {EB986505-F620-4DE7-8063-9EFB4FAB19DC}
+		{9E9E77AF-678D-40A2-9211-3AB88EC5986D} = {EB986505-F620-4DE7-8063-9EFB4FAB19DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44FD011E-072A-46B0-AC88-37789CB7A3E1}

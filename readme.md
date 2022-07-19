@@ -541,6 +541,16 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 			- Starts from First Record in Cursor and advances itself to End-of-Records in Cursor
 		- End()
 			- Stop the cursor reading and release the pointer that is reading recorsd from the Cursor
+	- SqlParameter
+		- Classes that is used to pass parameterd to Stored Procedure and Parameterized Query
+		- Properties we need to set while passing parameters to a SP
+			- ParameterName: The NAme of the Parameter, that MUST matche with Actual Parameter Name
+			- Direction: If the parameter is input (Default) or Output parameter
+			- SqlDbType: The SQL Server Data Type for the parameter
+			- Value: The Data to be passed to the parameter
+			- Size: Set this only in case of Textual data e.g. varchar, nvarchar, etc. Default value for Size property for Textual data is 1
+		- Add the SqlParameter to the Command Object
+			- Cmd.Parameters.Add(SqlParameter Object)
 				
 - Data Access Programming Practices
 	- Since the .NET App connects to SQL Server Database, its is an external resource
