@@ -569,3 +569,70 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 	}
 	- We can have Nested try
 		- try {  try { try { } } } catch(Exception ex){}
+
+- Object Model for Performing CRUD Operations using ADp.NET Disconnected Architecture with DataSet
+
+- Connect to Db
+	- SqlConnection Conn = new SqlConnection("Connection string")
+	- Define Adapter
+		- SqlDataAdapter AdDept = new SqlDataAdpater("Select * from Department", Conn);
+	- Declare DataSet
+		- DataSet Ds = new DataSet();
+	- Fill Data Into DataSet
+		- AdDept.Fill(Ds, "Department"); Ds is having a DataTable of Name Department whihc contains Data Received from Database
+		- Two Types of DataSet
+			- Typed DataSet
+				- The DataSet filled with Primary and Foreign Keys of table
+			- UnTyped DataSet (Default)
+				- DataSet only has Schema dn Data of the Table but not constraints (Pk and Fk)
+		- We cannot find data from UnTyped DataSet using Primary key
+			- Convert the UnTyped DataSet into Typed DataSet
+			- AdDept.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+				- Adpter is configured to read Table Constraints
+			- Fill Data into DataSet
+				-  AdDept.Fill(Ds, "TABLE-NAME");
+	- Add a new record
+		- Define a DataRow Object 
+			- DataRow DrNew = Ds.Tables["Department"].NewRow(); Create a Row having same columns of Department Table
+		- Set its Column Values
+			- DrNew["DeptNo"]=100; DrNew["DeptName"]="dcdd"; DrNew["Location"]="Pune"; DrNew["Capacity"]=777;
+		- Set the Row as a Row Collection of Department Table in Ds
+			- Ds.Tables["Department"].Rows.Add(DrNew);
+	- Define SqlCommandBuilder based on Adapter and ask this Builder to Update Data Back to Database
+		- SqlCommandBuilder bldr = new SqlCommandBuilder(AdDept);
+			- This will Connect to DB
+	- Ask the Adapter to Update Data in Database
+		- AdDept.Update(Ds, "Department");	
+			- Read Data from Diffgram that is associated with 'Department' DataTable in DataSet
+			- Check if this is New Record (Insert), Update an existing record (Update) or Delete Record (Delete)
+			- The Adapter will invoke the required Command Objects and hence their CommandText (Insert,Update,Delete queries) and Update data to the Matching Table in Database 
+
+		- InsertCommnad
+			- Insert into Table values (.....);Select col1,col2....coln from Table;
+				- After insert is successfuly executed, the select statement will read new data from table and send back to Adapter and adapter will update this data back to DataSet's Original section
+		- UpdateCommand
+			- Before Update is commited into the database the Command will check if the Original values are as it as present into tabel for that row, if these values are changed by any other client, then 'DbConcurrencyException' will be thrown
+
+			- Update Table set Col1=New-Value, Col2-New-Value.... where
+				Col1=Orig-Value, Col2-Orig-Valie......;Select col1,col2....coln from Table;
+					- After update is successfuly executed, the select statement will read new data from table and send back to Adapter and adapter will update this data back to DataSet's Original section
+		- DeleteCommand
+			- Delete from Table where Col1=Orig-Value, Col2-Orig-Valie......;Select col1,col2....coln from Table;
+				- If row is changed no delete takes place
+				- After delete is successfuly executed, the select statement will read new data from table and send back to Adapter and adapter will update this data back to DataSet's Original section
+	- Search Record from Typed Data Set using Primary key	
+		- DataRow DrFind = Ds.Tables["TABLE-NAME"].Rows.Find(PRIMARY-KEY-VALUE);
+	- Update the record
+		- Search record based on P.K.
+		- Chage its column values 
+			- DrFind["Col1"] = New-Value;
+		- Call Command Builder
+			-  SqlCommandBuilder bldr = new SqlCommandBuilder(AdDept);
+		- Update
+			- AdDept.Update(Ds, "Table-Name");
+	- Delete Record
+		- Search record based on P.K.
+		- Remove
+			- Ds.Tables["TABLE-NAME"].Delete(DrFind);
+		- Call Command Builder
+		- Update

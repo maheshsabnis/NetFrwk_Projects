@@ -162,6 +162,71 @@ namespace CS_Using_StoredProcs
                 Cmd.CommandType = System.Data.CommandType.Text;
                 Cmd.CommandText = "Insert into Department Values(@DeptNo,@DeptName, @Location,@Capacity)";
 
+
+
+                // Define Parameters Here
+                SqlParameter pDeptNo = new SqlParameter();
+                pDeptNo.ParameterName = "@DeptNo";
+                pDeptNo.DbType = System.Data.DbType.Int32;
+                pDeptNo.Direction = System.Data.ParameterDirection.Input;
+                pDeptNo.Value = 202;
+
+                SqlParameter pDeptName = new SqlParameter();
+                pDeptName.ParameterName = "@DeptName";
+                pDeptName.DbType = System.Data.DbType.String;
+                pDeptName.Direction = System.Data.ParameterDirection.Input;
+                pDeptName.Size = 200;
+                pDeptName.Value = "Courier";
+
+                SqlParameter pLocation = new SqlParameter();
+                pLocation.ParameterName = "@Location";
+                pLocation.DbType = System.Data.DbType.String;
+                pLocation.Direction = System.Data.ParameterDirection.Input;
+                pLocation.Size = 200;
+                pLocation.Value = "Pune-West";
+
+                SqlParameter pCapacity = new SqlParameter();
+                pCapacity.ParameterName = "@Capacity";
+                pCapacity.DbType = System.Data.DbType.Int32;
+                pCapacity.Direction = System.Data.ParameterDirection.Input;
+                pCapacity.Value = 20;
+
+                // Add these parameters into the Parameters Collection of the SqlCommand Object
+                Cmd.Parameters.AddRange(new SqlParameter[] { pDeptNo, pDeptName, pLocation, pCapacity });
+
+                int Result = Cmd.ExecuteNonQuery();
+                if (Result > 0)
+                    Console.WriteLine("Insert is Successfull");
+                else
+                    Console.WriteLine("Insert Failed");
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error while reading all records: {ex.Message}");
+            }
+            finally
+            {
+                Conn.Close();
+            }
+        }
+
+
+
+
+        public void InsertDepartmentNormal(int dno,string dname, string loc, int cap)
+        {
+            try
+            {
+                Conn.Open();
+                Cmd = new SqlCommand();
+                Cmd.Connection = Conn;
+                Cmd.CommandType = System.Data.CommandType.Text;
+                Cmd.CommandText = "Insert into Department Values(" + dno + ",'"+ dname +"','" + loc + "'," + cap +")";
+
+
+
                 // Define Parameters Here
                 SqlParameter pDeptNo = new SqlParameter();
                 pDeptNo.ParameterName = "@DeptNo";
