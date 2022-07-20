@@ -683,6 +683,39 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 				- Contains CSS Fonts
 			- Scripts Folder
 				- Contains the jquery, JavaScript Files
+		- Master Files
+			- Common Layout Files
+```` html
+				- <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebForm_App.SiteMaster" %>
+
+````
+				- @Master is 'Directive', this represents the current file is Master Page
+					- AutoEventWireup: Events on UI will be habdled explicitly
+					- CodeBehind: The Code behind file that contains C# Code
+					- Inherits: Links the Site.master file to site.master.cs file, the Code-Behind file, this file contains the class name 'SiteMaster'
+						- When the Site.master file is loaded actualy an instance of 'SiteMaster' class will be executed
+```` html
+  <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+````
+
+		- ContentPlceHolder is Control that contains and renders .aspx as child page
+			- MainContent is an id which will be used by .aspx page so that it can act as a child of Master Page
+			- runat=server, means the page is executed on server
+
+```` html
+<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebForm_App._Default" %>
+
+````
+		- The 'Page' is adirective that represents the ASP.NET Web Form which will be executed on server
+			- MasterPageFile: When this page is requested the Master Page (site.master) will be loaded on server, first the master page class will be executed then the aspc Page will be executed
+			- Inherits will link the UI file with its code-behind file
+			- The class i.e. _Default will be executed on Server in the '_Default.DLL' (The Page Assembly) when the Default.aspx is requested  
+```` html
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+````
+		- The 'Content' is a control that COntains UI of the Page
+			- ContentPlaceHolederID: this is the 'id' of the  'ContentPlceHolder' of the Master page under which the current aspx page UI is loaded and rendered 
 		- Understand WebForm and WebControls
 		- State Management
 		- Caching
