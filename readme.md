@@ -638,3 +638,54 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 			- DrFind.Delete();
 		- Call Command Builder
 		- Update
+
+# Web Application Programming using .NET Framework
+1. ASP.NET aka WebForms (.NET 6 have deprecated the WebForm by Razor Views)
+	- WebForm
+		- A UI file with an extension of .aspx e.g. MyPage.aspx
+			- This will have UI developed using HTML and ASP.NET WebControls
+			- HTML UI runbs on Browser by default
+			- WebControls are UI Elements those are only executed on WebServer 
+		- Each UI file has Logic with it aka the 'Code-Behind' file
+			- e.g. is UI file is MyPage.apsx, the Code-Behind file will be MyPage.aspx.cs
+			- This file contains class that is derived from 'Page' class
+			- This class defines events for various WebControls e.g. click for button, textchange for TextBox, change for DropDown  
+			- The Page class also has 'LifeCycle' that manages an execution of Page on WebServer
+	- ASP.NET Programming
+		- WebForm Application Folder Structure
+			- .aspx files
+				- WebForm UI Pages
+			- .master files
+				- Master Page file that has common UI layout for all .aspx pages
+			- Global.asax file
+				- The Entry-Ppint to Web App when the request is accepted by IIS and the Web Application (Web Site) is located
+				- This file contains code for
+					- Process Request
+					- Session State Management
+					- Application State Management
+					- Application Error
+			- Web.config file
+				- Heart of Web App 
+				- Application Level Configuration as follows
+					- Database Connection string
+					- Authentication
+					- Custom Configurations
+					- External Dependencies used by the Current Web App
+			- App_Data Folder
+				- A Data folder that contains data files used by the application e.g. XML, JSON, CSV files. The .mdf (SQL Server Database) file
+			- App_Start Folder
+				- Contains class for Routing Information
+				- Class for creating bundle for .js,.css files so that they can be hosted on IIS Web Server and responded to browser with HTTP Response
+			- Content Folder
+				- The Bootstrp CSS Framework files
+				- Used for Rich UI
+			- fonts
+				- Contains CSS Fonts
+			- Scripts Folder
+				- Contains the jquery, JavaScript Files
+		- Understand WebForm and WebControls
+		- State Management
+		- Caching
+		- Data Access
+		- Security
+2. ASP.NET Mode-View-Controller (MVC)
