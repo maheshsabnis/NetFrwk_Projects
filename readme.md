@@ -717,6 +717,51 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- The 'Content' is a control that COntains UI of the Page
 			- ContentPlaceHolederID: this is the 'id' of the  'ContentPlceHolder' of the Master page under which the current aspx page UI is loaded and rendered 
 		- Understand WebForm and WebControls
+			- WebForm
+				- A 'Page' object that has lifecycle events(?) which managed the execution on server (?) for the UI when it is posted back to server fronm Browser
+				- A Container Object that contains UI Objects (HTML and WebControls) and the evnets for these UI objects 
+			- WebControl
+				- The ASP.NET Server Cobtrols those are executed ion Server
+				- All these are Derived from immediate base class known as  'WebControl' which is deribed from 'Control' Base class
+				- The server controls is used as follows on the Page (WebForm)
+```` html
+			<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+````
+			- The 'asp:' means this is WebContorl
+			- The 'ID', the server-side identiication of the control
+			- The 'runat="server"' means this will be executed on the server when the Page is Posted BAck (aka submitted) to the server 
+			- The 'WebControl' class has various mathods but following asre important
+				- Render(HtmlTextWriter)
+					- Generate HTML stream using the HtmlTextWriter class for the WebControl to its matching HTML element
+					- e.g.
+						- asp:TextBox the rendering will be input type="text"
+				- RenderContent(HtmlTextWriter)
+					- Render the WebControl with its children (Contents) into HTML form using HtmlTextWriter
+					- This also takes care of the Data of the control shown on Browser using HTML
+				- RenderBeginTag(HtmlTextWriter)
+					- Generate HTML Start Tag based on Render() HTML Stream
+				- RenderEndTag(HtmlTextWriter)
+					- Gennerate HTMl End Tage for Start Tag
+			- DataBound Web Controls
+				- Used to Display Collection aka IEnumerable as Source
+				- Properties
+					- DataSource: USed to Accept the Collection from which data will be shown
+					- DataTextField: A Property that contains the Display Member which is the Text Value e.g. In a collection of Departments, the DeptName will be Display Member 
+					- DataValueFiled: The value of the selected Member
+					- DataMember: The onse which is selected
+				- DropDownList
+					 DataSource
+				- GridView
+					 DataSource
+				- ListView
+					 DataSource
+				- FormView
+					 DataSource
+			- The 'EnableViewState', the property of WebControl that is responsible to maintain the data associated with the Control during the Postback of the Same Page 
+				- EnableViewState="True", by default
+				- Setting EnableViewState to false, means that each time the control and its values will be initialized and the SaveViewState() method will fail to maintain the previos data of the control and hence it will also fail to load the previous data of the control 
+			- If EnableViewState=true is causing the repeted data in DataBound Controls because of 'page-load' event, then to prevent the code of the page_load from exection for each postback (submit), use the 'IsPostBack' flag of the Page class
+				- Ths IsPOstBack is false for the first request of the page and for the next consecutive requests for the same page the value of IsPostBack will be true
 		- State Management
 		- Caching
 		- Data Access

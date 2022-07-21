@@ -1,42 +1,34 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebForm_App._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
+    <div class="container">
+        <div class="form-group">
+            <asp:Label runat="server">Emp No</asp:Label>
+            <asp:TextBox runat="server" ID="txteno" TextMode="Number" CssClass="form-control"></asp:TextBox> 
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
+         <div class="form-group">
+            <asp:Label runat="server">Emp Name</asp:Label>
+            <asp:TextBox runat="server" ID="txtename" CssClass="form-control"></asp:TextBox> 
         </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
+         <div class="form-group">
+            <asp:Label runat="server">Dept Name</asp:Label>
+            <asp:DropDownList ID="ddlDname" runat="server" CssClass="form-control"></asp:DropDownList>
+        </div>
+         <div class="form-group">
+            <asp:Label runat="server">Designation</asp:Label>
+            <asp:DropDownList ID="ddlDesig" runat="server" CssClass="form-control" 
+                 OnSelectedIndexChanged="ddlDesig_SelectedIndexChanged"></asp:DropDownList>
+        </div>
+         <div class="form-group">
+            <asp:Label runat="server">Salary</asp:Label>
+            <asp:TextBox runat="server" ID="txtsal" TextMode="Number" CssClass="form-control"></asp:TextBox> 
+        </div>
+        <div class="form-group">
+            <asp:Button ID="btnNew" Text="New" CssClass="btn btn-warning" runat="server" OnClick="btnNew_Click"
+                 />
+            <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-success" 
+                OnClick="btnSave_Click" />
         </div>
     </div>
-
+    <asp:Label ID="lbldata" runat="server" Text="The Employee Data is: "></asp:Label>
 </asp:Content>
