@@ -26,8 +26,7 @@ namespace WebForm_App
                 } 
             }
         }
-
-       
+              
 
         protected void btnNew_Click(object sender, EventArgs e)
         {

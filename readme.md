@@ -762,6 +762,37 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 				- Setting EnableViewState to false, means that each time the control and its values will be initialized and the SaveViewState() method will fail to maintain the previos data of the control and hence it will also fail to load the previous data of the control 
 			- If EnableViewState=true is causing the repeted data in DataBound Controls because of 'page-load' event, then to prevent the code of the page_load from exection for each postback (submit), use the 'IsPostBack' flag of the Page class
 				- Ths IsPOstBack is false for the first request of the page and for the next consecutive requests for the same page the value of IsPostBack will be true
+			- Frequently used Controls for WebForm
+					- Evnets of Each Web Control will be alwys by default executed on server, to execute these events on server, the Page "MUST BE POSTED BACK TO SERVER" 
+				- asp:TextBox
+					- TextChanged
+						- Default Event
+					- To Post Page Back to Server for TextChanged Event, set the 'AutoPostBack' property of the TextBox to true 
+				- asp:Button
+					- Click
+						- Event
+						- asp:Button will be rendered as input type="submit" in browser and this will post page back tot server
+				- asp:Lable
+				- asp:DropDownList
+					- SelectedIndexChanged
+						- Default Event
+					- To Post Page Back to Server for TextChanged Event, set the 'AutoPostBack' property of the TextBox to true	
+				- asp:RadioButton
+					- To Post Page Back to Server for TextChanged Event, set the 'AutoPostBack' property of the TextBox to true 			
+				- asp:CheckBox
+					- To Post Page Back to Server for TextChanged Event, set the 'AutoPostBack' property of the TextBox to true 			
+				- asp:RadioButtonList
+					- To Post Page Back to Server for TextChanged Event, set the 'AutoPostBack' property of the TextBox to true 			
+				- asp:CheckBoxList
+					- To Post Page Back to Server for TextChanged Event, set the 'AutoPostBack' property of the TextBox to true 			
+				- Note: DataBOund Controls
+					- These are WebServer Controls those are used to show data from IEnumerables aka Collections
+					- The data from Collection MUST be bound to all DataBound Controls using 'DataBind()' method
+				- asp:GridView
+					- DataSource Porperty to sho data from Collection
+					- To Maintain the View-State of the data during PostBacks of Sample page use
+							- DataBind() method
+				- asp:ListView
 		- State Management
 		- Caching
 		- Data Access

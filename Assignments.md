@@ -100,3 +100,21 @@
 	- A DLL for Employee and Department
 	- A DLL for DataAccess for Department and Employee for Disconnected Architectire for CRUD Operations 
 	- A Console App for Read/Write Operations using Switch Case by Accepting Data from End-User and Perform R/W operatrion using both DLLs referred into the Console Application
+
+# Date: 22-July-2002
+1. In ASP.NET Project add a Model Folder with following classes
+	- State class with Properties as  StateId, StateName
+	- States class derivbed from 
+```` csharp		
+		List<State>
+````
+		- HardCode the State names, in States class e.g. MH as Maharashtra, DL as Delhi, etc.	
+	- City class with Porpeties as CityId, CityName, StateId
+	- Cities class derived from
+```` csharp
+		List<City>
+````
+	- This class will have cities for States
+2. Create a CascadeInfo.aspx web form in ASP.NEt Project and add asp:DropDownLists (DDL) each one for State and City
+	- When a State is selected from States DDL, the Coity DDL will show all Cities from the selected state
+	- (Optional) When the Page is loaded, for the First Selected 'State' in State DLL, show only Cities of that State
