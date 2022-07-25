@@ -28,7 +28,7 @@ namespace WebForm_App.ContorlsDemo
                     // 2. Filter the data
                     var FilteredEmployees = new List<Employee>();
                     foreach (var emp in empDb)
-                    {
+                    { 
                         if (emp.DeptId == DeptId)
                         {
                             FilteredEmployees.Add(emp);
