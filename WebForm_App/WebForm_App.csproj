@@ -112,7 +112,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ContorlsDemo\CookieReceiver.aspx" />
+    <Content Include="ContorlsDemo\CookieSender.aspx" />
     <Content Include="ContorlsDemo\PageTextButtons.aspx" />
+    <Content Include="ContorlsDemo\QueryStringReceiver.aspx" />
+    <Content Include="ContorlsDemo\QueryStringSender.aspx" />
+    <Content Include="ContorlsDemo\ViewStateForm.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -177,12 +182,47 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContorlsDemo\CookieReceiver.aspx.cs">
+      <DependentUpon>CookieReceiver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\CookieReceiver.aspx.designer.cs">
+      <DependentUpon>CookieReceiver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContorlsDemo\CookieSender.aspx.cs">
+      <DependentUpon>CookieSender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\CookieSender.aspx.designer.cs">
+      <DependentUpon>CookieSender.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ContorlsDemo\PageTextButtons.aspx.cs">
       <DependentUpon>PageTextButtons.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ContorlsDemo\PageTextButtons.aspx.designer.cs">
       <DependentUpon>PageTextButtons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContorlsDemo\QueryStringReceiver.aspx.cs">
+      <DependentUpon>QueryStringReceiver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\QueryStringReceiver.aspx.designer.cs">
+      <DependentUpon>QueryStringReceiver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContorlsDemo\QueryStringSender.aspx.cs">
+      <DependentUpon>QueryStringSender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\QueryStringSender.aspx.designer.cs">
+      <DependentUpon>QueryStringSender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContorlsDemo\ViewStateForm.aspx.cs">
+      <DependentUpon>ViewStateForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\ViewStateForm.aspx.designer.cs">
+      <DependentUpon>ViewStateForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

@@ -794,6 +794,63 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 							- DataBind() method
 				- asp:ListView
 		- State Management
+			- ASP.NET Web Core Objects
+				- Request
+				- Response
+				- Server
+				- Session
+			- Session: Every New Fresh Request to the application. Within a session the client can send requests to the Server Multiple Times.
+			- State Management, It is a Process where the data is maintained in-side the server's process and then as of the need this data will be made available for:
+				- Across all consecutive requests for the same page in a session
+					- ViewState
+						- The 'Page.ViewState' property
+						- Maintain the state using the Hidden Field
+						- For WebControls, this is Managed using 'EnableViewState'
+					- Advantages
+						- Maintain the state of the data across all consecutive requests for the same page
+						- We need not to use un-necessary static
+					- Boundries
+						- UnNecessary ViewState will increase the memory utilization on the server
+						- This will reduce the Performance
+						- Since it is for one-single page, when we move from this page to other page the data stored in ViewState for that page will be deleted/Remnoved 
+				- Across Two-Pages in a Same Session
+					- QueryString
+						- Portion of the URL After the '?' provided in the form of 'Name=Value' pair 
+						- e.g.
+							- http://myserver.com/pages?Name=ASP.NET
+							- The 'Name=ASP.NET' is QueryString
+							- The 'Name' is Key and 'ASP.NET' is value
+					- Move from One-Page-To-Other
+						- Response.Redirect("URL-OF-THE-TARGET-PAGE?Name=Value");
+					- Read the Data from QueryString on the Target Page
+						- Request.QueryString["Name"];
+					- Data is available for reading in the URL in AddressBar and can be changed by anybody
+					- The length of characters in the address bar mujst not be more than 1024 
+					- URL Invalid characters
+						- /, #, >,<
+					
+				- On the Browser for the Same Sesion i.e. across multiple pages in a same session
+					- Cookies
+						- Ther are the files physically  created on the Client's machine and data will stored in it
+							- HttpCookie infoCookie  =new HttpCookie("Name-Of-The-Cookie");
+							- e.g.
+								- HttpCookie infoCookie  =new HttpCookie("Info");
+								- Info["Key1"] = Value1;
+								- Info["Key2"] = Va;ue2;
+							- Request.Cookeis.Add(infoCookie);
+							- To Retrieve
+								- var cookie = Request.Cookies["Info"], 
+									- Read data from Cookie
+								- var val1 = cookie["Key1"].Value;
+								- var val2 = cookie["Key1"].Value;
+				- Across multiple Sessions at Application Level
+					- Session
+					- Application	
+			- Client-Side State Management
+				- ViewState, QueryString, Cookies
+			- Server-Side State Management
+				- Session and Application
+
 		- Caching
 		- Data Access
 		- Security

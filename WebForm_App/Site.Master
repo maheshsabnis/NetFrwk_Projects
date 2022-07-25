@@ -54,6 +54,10 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/ContorlsDemo/PageTextButtons">TextBoxes and Buttons</a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/ViewStateForm">ViewState </a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/QueryStringSender">QueryString </a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/CookieSender">Cookie Sender </a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/CookieReceiver">Cookie Receiver</a></li>
                     </ul>
                 </div>
             </div>
