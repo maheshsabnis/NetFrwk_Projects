@@ -854,7 +854,14 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 				- ViewState, QueryString, Cookies
 			- Server-Side State Management
 				- Session and Application
-
+		- Validation Controls
+			- Server-Side Control those are attached with WebControls to Validate its Values
+				- RerquiredValidator
+				- RegularExpressionValidator
+				- CompareValidator
+				- EmailValidator
+				- RangeValidator
+				- CustomValidator
 		- Caching
 		- Data Access
 		- Security

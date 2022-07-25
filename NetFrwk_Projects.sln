@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{554CBBFD-2278-4463-9A44-97DE29589284}"
 	ProjectSection(SolutionItems) = preProject
 		Assignments.md = Assignments.md
+		HOL1_StateManagement.pdf = HOL1_StateManagement.pdf
+		HOl_10_ASPNET_JQuery.pdf = HOl_10_ASPNET_JQuery.pdf
+		HOL_12_ASPNET_jQuery_Controls_Programming.pdf = HOL_12_ASPNET_jQuery_Controls_Programming.pdf
+		HOL_2_UserControls_Custom_COntrols.pdf = HOL_2_UserControls_Custom_COntrols.pdf
+		HOL_4_Data_Access.pdf = HOL_4_Data_Access.pdf
 		Project-Statements.md = Project-Statements.md
 		readme.md = readme.md
 	EndProjectSection

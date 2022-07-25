@@ -51,15 +51,16 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/ContorlsDemo/PageTextButtons">TextBoxes and Buttons</a></li>
+                       <%-- <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>--%>
+                        <li><a runat="server" href="~/ContorlsDemo/PageTextButtons">Controls</a></li>
                         <li><a runat="server" href="~/ContorlsDemo/ViewStateForm">ViewState </a></li>
                         <li><a runat="server" href="~/ContorlsDemo/QueryStringSender">QueryString </a></li>
-                        <li><a runat="server" href="~/ContorlsDemo/CookieSender">Cookie Sender </a></li>
-                        <li><a runat="server" href="~/ContorlsDemo/CookieReceiver">Cookie Receiver</a></li>
-                        <li><a runat="server" href="~/ContorlsDemo/SessionSender">Session Sender</a></li>
-                        <li><a runat="server" href="~/ContorlsDemo/SessionReceiver">Session Receiver</a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/CookieSender">CookieSender </a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/CookieReceiver">CookieReceiver</a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/SessionSender">SessionSender</a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/SessionReceiver">SessionReceiver</a></li>
+                        <li><a runat="server" href="~/DataAccess/DepartmentDbAccess">Department DB</a></li>
                     </ul>
                 </div>
             </div>
