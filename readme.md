@@ -845,6 +845,10 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 								- var val2 = cookie["Key1"].Value;
 				- Across multiple Sessions at Application Level
 					- Session
+						- For every New Session a Copy of Session Object(s) will be created
+						- e.g.
+							- For 10 Session Object and 1000 Active Session, the Web Server have to store 10000 Session Objects
+							- Please Note, Try to reuse the session Object
 					- Application	
 			- Client-Side State Management
 				- ViewState, QueryString, Cookies

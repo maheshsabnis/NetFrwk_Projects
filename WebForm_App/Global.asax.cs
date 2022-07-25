@@ -24,5 +24,15 @@ namespace WebForm_App
             // Create a Build Bundle for jquery,bootstrap   
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        void Session_Start(object sender, EventArgs e)
+        { 
+           // declare bulk of Sessikon Object as per the choice
+        }
+
+        void Session_End(object sender, EventArgs e)
+        {
+            // Clear those object
+        }
     }
 }

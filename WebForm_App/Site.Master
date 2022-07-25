@@ -58,6 +58,8 @@
                         <li><a runat="server" href="~/ContorlsDemo/QueryStringSender">QueryString </a></li>
                         <li><a runat="server" href="~/ContorlsDemo/CookieSender">Cookie Sender </a></li>
                         <li><a runat="server" href="~/ContorlsDemo/CookieReceiver">Cookie Receiver</a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/SessionSender">Session Sender</a></li>
+                        <li><a runat="server" href="~/ContorlsDemo/SessionReceiver">Session Receiver</a></li>
                     </ul>
                 </div>
             </div>

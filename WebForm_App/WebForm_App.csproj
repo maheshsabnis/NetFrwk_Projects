@@ -117,6 +117,8 @@
     <Content Include="ContorlsDemo\PageTextButtons.aspx" />
     <Content Include="ContorlsDemo\QueryStringReceiver.aspx" />
     <Content Include="ContorlsDemo\QueryStringSender.aspx" />
+    <Content Include="ContorlsDemo\SessionReceiver.aspx" />
+    <Content Include="ContorlsDemo\SessionSender.aspx" />
     <Content Include="ContorlsDemo\ViewStateForm.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -216,6 +218,20 @@
     </Compile>
     <Compile Include="ContorlsDemo\QueryStringSender.aspx.designer.cs">
       <DependentUpon>QueryStringSender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContorlsDemo\SessionReceiver.aspx.cs">
+      <DependentUpon>SessionReceiver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\SessionReceiver.aspx.designer.cs">
+      <DependentUpon>SessionReceiver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContorlsDemo\SessionSender.aspx.cs">
+      <DependentUpon>SessionSender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContorlsDemo\SessionSender.aspx.designer.cs">
+      <DependentUpon>SessionSender.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContorlsDemo\ViewStateForm.aspx.cs">
       <DependentUpon>ViewStateForm.aspx</DependentUpon>
