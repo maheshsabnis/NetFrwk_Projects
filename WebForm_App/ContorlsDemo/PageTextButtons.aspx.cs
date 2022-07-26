@@ -21,6 +21,8 @@ namespace WebForm_App.ContorlsDemo
                 // and Generate HTMl UI
                 gvEmployees.DataBind();
             }
+
+           
         }
 
         protected void txtname_TextChanged(object sender, EventArgs e)

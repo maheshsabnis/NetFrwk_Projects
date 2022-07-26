@@ -24,6 +24,8 @@ namespace WebForm_App
                 {
                     ddlDesig.Items.Add(desig);
                 } 
+
+                
             }
         }
               

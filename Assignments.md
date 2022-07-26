@@ -125,3 +125,7 @@
 	- on this Page, show DropDownList for Department to select the DeptName to End-User and When the DeptName is selected, select the DeptNo for the Employee operatiosn (New/Update) 
 3. Implement Validations for Both pages of 1 and 2
 4. Create a Page named SearchEmpployees.aspx. This page will have DropDowns for Showing List of DeptNames, below this list add a GridView that will show all Employees. When a DeptName is selected, show only those Employees for the selected DeptName
+
+# Date: 26-July-2022
+1. Create a Currency Converter User Control like Google Gives 
+2. Refer the  HOL_2_UserControls_Custom_COntrols.pdf for Creating Custom Control

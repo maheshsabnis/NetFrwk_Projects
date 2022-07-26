@@ -61,6 +61,7 @@
                         <li><a runat="server" href="~/ContorlsDemo/SessionSender">SessionSender</a></li>
                         <li><a runat="server" href="~/ContorlsDemo/SessionReceiver">SessionReceiver</a></li>
                         <li><a runat="server" href="~/DataAccess/DepartmentDbAccess">Department DB</a></li>
+                        <li><a runat="server" href="~/DataAccess/DeptDataAccessWithInjection">Dept Inject</a></li>
                     </ul>
                 </div>
             </div>

@@ -884,5 +884,71 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 					- PageIndexChanged, Load the page when the new page number is selected
 		- Caching
 		- Data Access
+			- Dependency Injection
+				- Unity Application Block
+					- Container Object
+						- Contians all dependencies those are used by the application
+						- Install from 'Manage NuGet Packages' window
+							- Microsoft.AspNet.WebFormsDependencyInjection.Unity
+					- Modify Global.asax.cs by  by using namsepaces for Unity and  Microsoft.AspNet.WebFormsDependencyInjection.Unity
+						- using Unity
+						- using Microsoft.AspNet.WebFormsDependencyInjection.Unity
+					- Modify the Application_Start() 
+						- Creae container
+```` csharp
+ void Application_Start(object sender, EventArgs e)
+        {
+
+            // 1. Create a Unity Container
+
+            var container = new UnityContainer();
+
+            // 2. Register All Dependencies
+            // e.g. DepartmentDataAccess, EmployeeDataAccess
+
+            container.RegisterType<IDataAccess<Department,int>,DepartmentDataAccess>();
+            container.RegisterType<IDataAccess<Employee,int>,EmployeeDataAccess>();
+
+			......
+        }
+
+````
+				- Inject Dependency using Constructor in a Page
+```` csharp
+	 private IDataAccess<Department, int> deptDbAccess;
+
+        /// <summary>
+        /// Inject
+        /// </summary>
+        public DeptDataAccessWithInjection(IDataAccess<Department, int> dbAccess)
+        {
+            this.deptDbAccess = dbAccess;
+        }
+	
+````
+				- IoC.Net
+				- NInject
+				- Rhino
+		- Creation od Custom Define UI Elements
+			- Plan for the Requirements for the User/Custom Control
+				- To Decide the Business Logic
+			- What data will be exposed by the Custom / User control to its container (ASPX PAGE) and what data will be accepted by the User/Custom Control from the Container
+				- To decide public properties 
+			- When this data will be communicated to container
+				- To decide Events those are raised by control and subscribed by the container
+			- Decide UI to plan on Look and Feel
+		- UserControl
+			- Uses a Standard UI provided by ASP.NET WebForms to Create re-usable UI with logic
+			- This is a part of WebForm Project
+			- The Rendering of UserControl is managed by WebForm project
+			- Extension is .ascx
+			- Since the Lifecycle of the User Control is same as the page, please use 'ViewState' to maintain the state of the intermidiate values
+		- Custom Control
+			- The Complete New UI that is havinbg a seperate project 
+			- This is compiled into .dll
+			- This .dll file nbeeds to be added in WebForm Project
+			- The developer has to explicitly write rendering for it
+
+		- When the User/Custom Control is used on Page use the '@Register' Directive
 		- Security
 2. ASP.NET Mode-View-Controller (MVC)
