@@ -53,7 +53,7 @@ namespace Application.DataAccess
                 Cmd.Connection = Conn;
                 Cmd.CommandType = System.Data.CommandType.Text;
                 Cmd.CommandText = $"Delete from Department where DeptNo={id}";
-                int result = Cmd.ExecuteNonQuery ();
+                int result = Cmd.ExecuteNonQuery();
                 if (result != 0)
                 {
                     // create an empty Department object 
@@ -63,6 +63,10 @@ namespace Application.DataAccess
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                Conn.Close();
             }
             return department;
         }
