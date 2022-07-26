@@ -31,7 +31,8 @@ namespace WebForm_App
 
 
             // 1. Create a Unity Container
-            var container = new UnityContainer();
+            
+            var container = this.AddUnity(); 
 
             // 2. Register All Dependencies
             // e.g. DepartmentDataAccess, EmployeeDataAccess

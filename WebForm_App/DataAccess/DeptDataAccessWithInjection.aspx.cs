@@ -14,18 +14,15 @@ namespace WebForm_App.DataAccess
     {
         // 1. Lets Inject the DepartmentDataAccess Dependency to the Page using Constructor
         // 
-        [Dependency]
-        private IDataAccess<Department, int> deptDbAccess { get; set; }
-
-        //private IDataAccess<Department, int> deptDbAccess;
+        private IDataAccess<Department, int> deptDbAccess;
 
         ///// <summary>
         ///// Inject
         ///// </summary>
-        //public DeptDataAccessWithInjection(IDataAccess<Department, int> dbAccess)
-        //{
-        //    this.deptDbAccess = dbAccess;
-        //}
+        public DeptDataAccessWithInjection(IDataAccess<Department, int> dbAccess)
+        {
+            this.deptDbAccess = dbAccess;
+        }
 
 
 

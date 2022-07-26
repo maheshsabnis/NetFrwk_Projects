@@ -119,12 +119,12 @@
 	- When a State is selected from States DDL, the Coity DDL will show all Cities from the selected state
 	- (Optional) When the Page is loaded, for the First Selected 'State' in State DLL, show only Cities of that State
 
-# Date: 25-July-2022
+# Date: 25-July-2022 (try Using DI)
 1. Update DepartmenbtDbAccess.aspx for Completing CRUD Operations for Department
 2. Add a new EmployeeDbAccess.aspx for CRUD Operations
 	- on this Page, show DropDownList for Department to select the DeptName to End-User and When the DeptName is selected, select the DeptNo for the Employee operatiosn (New/Update) 
 3. Implement Validations for Both pages of 1 and 2
-4. Create a Page named SearchEmpployees.aspx. This page will have DropDowns for Showing List of DeptNames, below this list add a GridView that will show all Employees. When a DeptName is selected, show only those Employees for the selected DeptName
+4. Create a Page named SearchEmpployees.aspx. This page will have DropDowns for Showing List of DeptNames, below this list add a GridView that will show all Employees. When a DeptName is selected, show only those Employees for the selected DeptName 
 
 # Date: 26-July-2022
 1. Create a Currency Converter User Control like Google Gives 
