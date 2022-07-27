@@ -91,7 +91,7 @@
 							- Html.EditorFor, Like TextBox
 							- Html.Select, like DropDownList
 				- Views Without Models
-					- Empty View Without Model
+					- Empty View Without Model 
 	- Web.Config
 		- Application Level Confoiguration e.g. Connection String
 		- Sessions Settings
@@ -99,4 +99,12 @@
 		- ProcessRequest
 		- Creating Route Table
 		- Managing Dependency Registrations used for Dependency Injection
+
+# MVC Programming
+1. Add Model Classes in Models folder or else, you can use the .dll reference
+	- Build the project, so that the Models are ready to use for Generating (Scaffolding Views) from controller
+2. Right-CLick on the Controllers folder and add a new 'MVC Controller' 
+```` csharp
+public abstract class Controller : ControllerBase, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer
+````
 

@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		HOL_12_ASPNET_jQuery_Controls_Programming.pdf = HOL_12_ASPNET_jQuery_Controls_Programming.pdf
 		HOL_2_UserControls_Custom_COntrols.pdf = HOL_2_UserControls_Custom_COntrols.pdf
 		HOL_4_Data_Access.pdf = HOL_4_Data_Access.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_ActionFilters.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_ActionFilters.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_Asynchronous_Controller.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_Asynchronous_Controller.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_Helper_Methods.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_Helper_Methods.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_JSON.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_JSON.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_Unobstrusive_JavaScript.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\ASPNET_MVC3\MVC3_Unobstrusive_JavaScript.pdf
 		Project-Statements.md = Project-Statements.md
 		readme.md = readme.md
 	EndProjectSection
