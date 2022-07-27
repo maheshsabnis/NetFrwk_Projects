@@ -62,7 +62,7 @@
 					- Partial View
 						- Works like UserControl
 					- View Scaffolding Policies
-						- Index View
+						- List View (Index)
 							- Accepts the List of Entity Class (aka IEnumerable of Entity class) to show data in HTML Table
 						- Create View
 							- Accepts an Empty Entity class instance to create a new Record
@@ -107,4 +107,24 @@
 ```` csharp
 public abstract class Controller : ControllerBase, IActionFilter, IAuthenticationFilter, IAuthorizationFilter, IDisposable, IExceptionFilter, IResultFilter, IAsyncController, IController, IAsyncManagerContainer
 ````
+
+- Controller: Contains methods for Request Processing, methods for sending responses,
+	- Properties for
+		- Accepting Httprequest and Generating HttpResponse
+		- ModelState Property for Validating values posted for the Model class using HTTPrequest  
+		- RouteData of type 'RouteData', this represents the Current URL in AddressBar and heps to read data from the URL
+	- Interfaces implemented by the Controller
+		- IActionFilter: Interface which is used to apply Action Filter (?) on Controller or its action Methods
+			- The 'Action Filter' is a class that contains additional logic which we want to execute when the Controller and its action methods are executed, e.g. Logging, Security, Exceptions, etc.
+		- IAuthenticationFilter, IAuthorizationFilter: Provide methods to manage the security for the Controller
+		- IExceptionFilter: Provide methosd for Handling Controller Level Exceptions for all action Methods
+		- IResultFilter: What result will be generated, e.g. view, redirect to other controller, File, FileStream, etc. 
+	- It is recommended that the MVC MUST use the Dependency Injection  for the DataAccess and other external dependencies
+		- Right-CLick on 'References' and select 'Manage NuGet Packages' and Select Unity.Mvc and Install it
+		- This will add the UnitConfig.cs file in the App_Start folder, this file contains class for Registering all dependencies. Modify this call for adding your project dependencies
+		- To Generate the view do the following
+			- Right-CLick inside the action and select option 'Add View', then from the Add View Windows Select View Template (List/Create/Edit/Delete/Details/Empty) and the select the Model class 
+	- IMP*********** Controller Fact
+		- By default each action method of the Controller is HTTP GET. The View can be generated from HttpGet Action Method only, The default attribute applied on the Http Get methods is [HttpGet] (Not Mandatory for MVC Controllers for Get methods because it is default), but for Post methods the [HttpPost] attribute MUST be applied on action Methods
+		- The HttpPost from View will execute the action method from the COntroller that matched with the name of the View and this method should be applied with [HttpPost] attribute
 

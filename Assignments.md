@@ -129,3 +129,7 @@
 # Date: 26-July-2022
 1. Create a Currency Converter User Control like Google Gives 
 2. Refer the  HOL_2_UserControls_Custom_COntrols.pdf for Creating Custom Control
+
+# Date: 27-July-2022
+
+1. Modify the MVC_Application by adding Controller for Employee and Its CRUD Action methods with Views
