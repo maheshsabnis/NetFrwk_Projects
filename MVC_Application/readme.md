@@ -128,3 +128,33 @@ public abstract class Controller : ControllerBase, IActionFilter, IAuthenticatio
 		- By default each action method of the Controller is HTTP GET. The View can be generated from HttpGet Action Method only, The default attribute applied on the Http Get methods is [HttpGet] (Not Mandatory for MVC Controllers for Get methods because it is default), but for Post methods the [HttpPost] attribute MUST be applied on action Methods
 		- The HttpPost from View will execute the action method from the COntroller that matched with the name of the View and this method should be applied with [HttpPost] attribute
 
+# Validating Model Properties using Validation Rules
+	- System.ComponentModel.DataAnnotations.dll assembly
+		- The Abstract class named 'ValidationAttribute'
+			- ErrorMessage property
+			- bool IsValid(object value)
+				- If value is valid against the rule then return true else return false
+		- RequiredAttribute : ValidationAttribute
+		- StringLengthAttribute : ValidationAttribute
+		- RegExAttribute: ValidationAttribute
+		- ComparerAttribute: ValidationAttribute
+	- If the Entities are in different .dll file, then Install the  System.ComponentModel.DataAnnotations package for validation rules
+	- When the Page is rendered to the browser all validations will ber presented as 'UnObstructiveValidators' aka HTML 5 Clean Validators 
+	- If you want to write a custom validator trhen make sure that the class is derived from 'VFalidationAttribute', write a logic by overriding 'IsValid()' method. Make sure  that, the class name ends with the word 'Attribute'
+	- Asynchronous Validations aka Remote Validation
+		- Used to Validate values entered on UI by executing an Asynchronous logic on the server 
+		- RemoteAttribute the class that is used for validation
+			- Apply this attribute on the property which should be validated asynchronously
+			- This class is provided by 'System.web.Mvc.dll' assembly
+			- E.g.	
+```` csharp
+	[Remote("ActionName", "ControllerName", ErrorMessage="")]
+	public int EmpNo {get;set;}
+````
+
+			- ControllerName: The MVC Controller that contains the the Action Method of name 'ActionName' which contains logic for validation	- The Action Method 'ActionName' MUST accept the Property Name that is to be validated asynchrponpusly and this MUST return 'JsonResult'
+				  - The view will make a JAVASCRIPT Async call to this action method fopr validation  
+- To send addditional data then the Model class properties to View from Action Method use ViewData or ViewBag, if yoiu want to pass the Collection to View using ViewBag or ViewData use 'SelectList' class from System.Web.Mvc  	
+	- IMP NOTE: While using ViewData or ViewBag
+		- If the Action Method is passing ViewBag or ViewData to view to show the data on it, then all action methods returning the same view MUST pass the ViewBag or ViewData to View otherwise the View will crash 
+				

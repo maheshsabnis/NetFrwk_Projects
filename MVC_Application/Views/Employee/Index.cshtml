@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Application.Entities.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Create New", "Create")
+<table class="table table-bordered table-striped">
+     <thead>
+         <tr>
+             <th>EmpNo</th>
+             <th>EmpName</th>
+             <th>Designation</th>
+             <th>Salary</th>
+             <th>DeptNo</th>
+         </tr>
+     </thead>
+     <tbody>
+         @foreach (var emp in Model)
+         {
+             <tr>
+                 <td>@emp.EmpNo</td>
+                 <td>@emp.EmpName</td>
+                 <td>@emp.Designation</td>
+                 <td>@emp.Salary</td>
+                 <td>@emp.DeptNo</td>
+             </tr>
+         }
+     </tbody>
+</table>
+
