@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model HandleErrorInfo
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -8,6 +10,15 @@
     <hgroup>
         <h1>Error.</h1>
         <h2>An error occurred while processing your request.</h2>
+        <hr/>
+        <h3>
+            Error Occured in @Model.ControllerName Controller, while executing Action Method Name @Model.ActionName 
+        </h3>
+        <h3>
+            The error message is: @Model.Exception.Message
+        </h3>
     </hgroup>
+    <!--Create an Action Link to Go Back-->
+    @Html.ActionLink("Go Back", Model.ActionName, Model.ControllerName)
 </body>
 </html>

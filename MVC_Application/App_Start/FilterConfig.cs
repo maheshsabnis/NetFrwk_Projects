@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using MVC_Application.CustomFilters;
 
 namespace MVC_Application
 {
@@ -13,6 +14,8 @@ namespace MVC_Application
         {
             // Register HandleErrorAttribute Filter for Handling Exception
             filters.Add(new HandleErrorAttribute());
+            // Register the LogFilter Globally
+            filters.Add(new LogFilterAttribute());
         }
     }
 }

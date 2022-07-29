@@ -133,3 +133,13 @@
 # Date: 27-July-2022
 
 1. Modify the MVC_Application by adding Controller for Employee and Its CRUD Action methods with Views
+
+# Date: 29-July-2022
+1. Use the OnException() method of each controller class to Log Exception Details in Database
+	- Create Table in Database of name 'Logger' with columns as 
+		- LogId (Identity Key )
+		- LogDate
+		- ControllerName
+		- ActionName
+		- ExceptionDetails
+	- Modify the Application.Entities by Adding a new class names 'Logger' with properties same as Logger Table and modify Application.DataAccess by adding  a new class for Adding the Log and retrieving log from MVC app 

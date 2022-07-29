@@ -158,3 +158,40 @@ public abstract class Controller : ControllerBase, IActionFilter, IAuthenticatio
 	- IMP NOTE: While using ViewData or ViewBag
 		- If the Action Method is passing ViewBag or ViewData to view to show the data on it, then all action methods returning the same view MUST pass the ViewBag or ViewData to View otherwise the View will crash 
 				
+# Action Filters
+- They are the logical blocks those are executed when the MVC Request Processing is un der execution
+- They can be applied for a Specific Action Method, For a controller (and hence fo all action methoods of the controller) and also at the Global level (and hence for all controllers in Applciation)
+	- Object Model
+		- IActionFilter intercace
+			- An Interface implemented by Action Filters
+		- ActionFilterAttribute class
+			- The abstract base class that is implemenetd by all Action Filter Classes
+		- Standard Filters
+			- HandleErrorAttribute
+			- AuthorizeAttribute
+			- ExceptionFilterAttribute
+			- ResultFilterAttribute
+		- HandleErrorInfo Class
+			- A Model Class that contains error Messages
+	- A Mechanism of Handling Exceptions in ASP.NET MVC Controllers
+		- Use Try..Ctach block in each action method
+			- Code Length will be more
+		- Overried 'OnException()' method for each controller and this method will be used to handle exception for any action method for that controller
+	- The HandleErrorAttribute can be directly applied on the Controller with ExceptionType and Veiw as follows
+```` csharp
+[HandleError(ExceptionType = typeof(Exception), View = "Error")]
+````
+		- To Show the Error Page, Modify the Web.Config file to Handle Custom Error as follows
+```` html
+	<customErrors mode="On"></customErrors>
+````
+
+	- Registeirng the ExceptionFilter at the Global Level
+		- Modify the FilterConfig class from App_Start for registering filters
+			
+			
+- Creating Custom Action Filters
+	- Why Needed: We want the additional Logic to be executed while the request is being Processed
+		- e.g. Log Each Incomming Request in Database	
+	- How: The class will be derived from ActionFilterAttibute class and will override its methods
+		- OnActionExecuting, OnActionExecuted, OnresultExecuting, and OnresultExecuted 
