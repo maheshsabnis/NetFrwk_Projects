@@ -1,0 +1,37 @@
+﻿# ASP.NET WEB API
+- The REST API Technology for .NET Framework
+- The ApiController
+	- Base class for WEB API
+	- Contains Http-Action Methods
+		- HttpGet, HttpPost, HttpPut, and HttpDelete
+- Steps for ApiController Execution 
+	- Server Accept Request
+		- e.g.
+			- http://www.myserver.com/api/MyController
+	- The Route Table will Evaluate the URL and will  Read the 'Path-Expressoin'
+		- '/api/MyController'
+	- Thsi will be passed to RouteHandler
+		- Check the 'Matching ApiController'  to the MyController and the information will be passed to the HttpHandler
+	- HttpHandler will look for 'MyController', if found then the Instance of MyController class 'inside the ControllerContext' will be created
+		- Verify the Security (If applied)
+			- If the Security Failed the HTTP Response with UnAuthorized (401) will be send
+		- Load and Instantiate Action Filters (If Applied)
+		- The Dependency will be injected (If the DI is used)
+		- The 'Controller' instance will be generated 
+	- Action Execution
+		- The Http request Type (Get/Post/Put/Delete)
+		- Based on the HttpRequest Type the the Action Method will be mapped
+			- HttpGet -- Get()
+			- HttpGet:id -- Get(id)	
+			- HttpPost -- Post()
+			- HttpPut -- Put()
+			- HttpDelete -- Delete()
+		- The ActionExecutionContetx
+			- Check for Security Filter (If Applied)
+			- Load and Initialize the Action Filter (If Applied)
+			The Action Method will be executed
+				- Validate the Model (Post and Put Requests Only)
+					- ModelState
+				- Model Updated
+				- Data Response as HttpResponse Message 
+				
