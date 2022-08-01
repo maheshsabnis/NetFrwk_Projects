@@ -14,6 +14,9 @@ namespace API_App
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            // COnfigure the Depednency Containe with Registered Typed
+            UnityConfig.RegisterComponents();
+
             // The Global Configuratuion that is used to understand HTTP Requests
             // for Following Methods
             // Http GET, POST,PUT, and DELETE

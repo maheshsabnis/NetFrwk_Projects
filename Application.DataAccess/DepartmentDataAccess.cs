@@ -31,6 +31,7 @@ namespace Application.DataAccess
                 Cmd.CommandType = System.Data.CommandType.Text;
                 Cmd.CommandText = $"Insert into Department Values({entity.DeptNo}, '{entity.DeptName}', '{entity.Location}', {entity.Capacity})";
                 Cmd.ExecuteNonQuery();
+               
             }
             catch (Exception ex)
             {
@@ -40,7 +41,7 @@ namespace Application.DataAccess
             {
                 Conn.Close();
             }
-            return department;
+            return entity;
         }
 
         Department IDataAccess<Department, int>.Delete(int id)

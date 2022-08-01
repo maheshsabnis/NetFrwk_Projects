@@ -143,3 +143,7 @@
 		- ActionName
 		- ExceptionDetails
 	- Modify the Application.Entities by Adding a new class names 'Logger' with properties same as Logger Table and modify Application.DataAccess by adding  a new class for Adding the Log and retrieving log from MVC app 
+# Date: 01-Aug-2022
+- Complete the Update and Delete operations for REST APIs from ASP.NEt Web Form Client App
+- Modify WEB API project by Adding EmployeeController for CRUD Operations on Employee Table 
+- Access the EmployeeController using ASP.NET WebForm Client app by adding a new EmployeeRESTClient.aspx

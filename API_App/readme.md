@@ -34,4 +34,13 @@
 					- ModelState
 				- Model Updated
 				- Data Response as HttpResponse Message 
-				
+- Install Unity.WebApi package for DI				
+
+- IHttpActionResult
+	- The Contract Intarface that represents the HTTP Reponse send after the Action Method from the WebAPI is executed Successfully
+		- Ok()
+- To Access The REST API using .NEt Framework Client App using
+	- System.Net.Http
+		- Install Package
+		- Usie HttpClient class
+	- System.Web.WebClient
