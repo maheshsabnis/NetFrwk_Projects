@@ -36,8 +36,8 @@ namespace WebForm_Client
         {
             try
             {
-                client.PutAsync("https://localhost:44365/api/Department/{id}");
-                client.DeleteAsync("https://localhost:44365/api/Department/{id}")
+                //client.PutAsync("https://localhost:44365/api/Department/{id}");
+                //client.DeleteAsync("https://localhost:44365/api/Department/{id}");
             }
             catch (Exception ex)
             {
