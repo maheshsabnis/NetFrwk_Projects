@@ -147,3 +147,10 @@
 - Complete the Update and Delete operations for REST APIs from ASP.NEt Web Form Client App
 - Modify WEB API project by Adding EmployeeController for CRUD Operations on Employee Table 
 - Access the EmployeeController using ASP.NET WebForm Client app by adding a new EmployeeRESTClient.aspx
+
+# Date: 02-Aug-2022
+
+1. Change the background color of table row to red when the mouse is enterd on it and once the mouse leave then get back to original 
+	- Hint: .css('background-color', 'red') // add
+			.css('') // remove
+	- On the dynamically generated table row add  a click event and read all the tbale row values (values for each cell)	

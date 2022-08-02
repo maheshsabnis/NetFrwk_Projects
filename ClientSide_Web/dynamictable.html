@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var roles = [
+                { id: "MI-16", name: 'James Bond' },
+                { id: "Force Police", name: 'Jack Reacher' },
+                { id: "CIA", name: 'Indiana Jones' },
+                { id: "IMF", name: 'Ethan Hunt' },
+                { id: "Black OP", name: 'Jason Bourn' },
+                { id: "CIA-Fed", name: 'Jack Ryan' }
+            ];
+
+            var keys = Object.keys(roles[0]);
+            console.log(keys);
+            var values = Object.values(roles[0]);
+            console.log(values);
+
+            // generating table using the Static proeprty names
+
+            generateTableHeadersStatically();
+            var columns = '';
+            function generateTableHeadersStatically() {
+                var headers = '<tr>';
+                $.each(keys, function (idx, key) {
+                    headers += '<th style="border:double;">' + key + '</th>'
+                });
+                headers += '</tr>';
+
+                $("#thead").html(headers);
+            }
+
+            // FUnction to generate Table Body with tr with data in it
+            function generateTableBody() {
+                  // 1.a geneerate a row 
+                var tr = '<tr>';
+                // 1. iterate over each record of the array
+                $.each(roles, function (index, record) {
+                  
+                  
+                    // 1.b. iterate over each key of the record and read its value
+                    $.each(keys, function (idx, key) {
+                        tr += '<td style="border:double;">' + record[key] + '</td>';
+                    });
+                    // 1.c. Complete the tr
+                    tr += '</tr>';
+                   
+                });
+                 // 2. add the tr in tbody
+                $("#tbody").html(tr);
+            }
+
+            generateTableBody();
+
+            // Adding an event to table selected row
+
+            $("#tbody").on('mouseenter', function () {
+                $("#tbody tr").css('background-color', 'yellow');
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="tbl" style="border:double;">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+</html>

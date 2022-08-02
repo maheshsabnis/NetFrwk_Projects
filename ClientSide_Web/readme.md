@@ -263,3 +263,17 @@ https://jquery.com/
       });
    });
 ````
+
+- Events Importance
+    - Inside an event method for the HTMl element, to refer the HTMl element and read its prooperty value using 'this'
+    
+- The jQuery Filters
+    - This is a mechanism using which jQuery can extract an exact state of the HTML element based on its condition
+        - What is 'condition'?
+            - It is a selected element from the collection of elements
+            - e.g.
+                - The 'select' is a collection of 'option'., so to select a specific option and to read its 'text' using the filter known as  ':selected' 
+- JavaScript Object
+    - var obj = {id:11, name:'ABC'}
+    - Object.keys(obj); returns an array of keys (aka) properties of object
+    - Object.values(obj); returns an array of values of each property of the object

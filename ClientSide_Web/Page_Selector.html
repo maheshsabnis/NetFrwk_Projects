@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--Refer the jQuery-->
+    <script src="Scripts/jquery-3.6.0.js"></script>
+    <!--<script src="Scripts/jquery-3.6.0.intellisense.js"></script>-->
+    <script>
+        $(document).ready(function () {
+            // Declare an array of names
+
+            var names = ['James Bond', 'Jack Reacher', 'Indiana Jones', 'Ethan Hunt', 'Jack Ryan', 'Jason Bourn'];
+
+            // code to generate the select dynamically
+            // select the list that will be populated dynamically
+            var lstdynamic = $("#lstdynamic");
+            var option = '';
+            $.each(names, function (idx, value) {
+                option += '<option value="' + idx + '">' + value +'</option>';     
+            });
+            // pass the string to the select element
+            lstdynamic.html(option);
+
+            // define an array of objects
+            // array of JSON Objects
+            var roles = [
+                { id: "MI-16", name: 'James Bond' },
+                { id: "Force Police", name: 'Jack Reacher' },
+                { id: "CIA", name: 'Indiana Jones' },
+                { id: "IMF", name: 'Ethan Hunt' },
+                { id: "Black OP", name: 'Jason Bourn' },
+                { id: "CIA-Fed", name: 'Jack Ryan' }
+            ];
+            var opt = '';
+            $.each(roles, function (idx, record) {
+                opt += '<option value="' + record.id + '">' + record.name + '</option>';
+            });
+
+            $("#lstdynamicObj").html(opt);
+            $("#btnClear").on('click', function () {
+                // Clear All input:text elements
+                // 1. Read all input:text elements
+                var inputs = $('input[type="text"]');
+
+                console.log(inputs.length);
+                // inputs: The First Parameter that is an object being iterated
+                // Callback function as second parameters
+                // index: the index of each eleemnt in inputs
+                // element: The type of element in inputs array (in this case it is input:text element)
+                $.each(inputs, function (index, element) {
+                    // $(inputs[index]).val(0);
+                    $(element).val(0);
+                });
+            });
+
+            $("#btnAdd").on('click', function () {
+
+                // Read values entered into text elements and parse them as integer (default they are string)
+                var n1 = parseInt($("#txtn1").val());
+                var n2 = parseInt($("#txtn2").val());
+
+                var result = n1 + n2;
+                // assign the result to txtres
+                $("#txtres").val(result);
+
+            });
+
+            $("#lstnames").on('change', function () {
+                // The 'this' is a select elelement
+                // (this option), is the option from the select
+                // (this option: selected), the selected option from select element
+                var selectedValue = $("#lstnames option:selected").val();
+                var selectedText = $("#lstnames option:selected").text();
+                alert('Selected Value = ' + selectedValue + '  and Selected Text = ' + selectedText);
+            });
+
+            $("#lstdynamicObj").on('change', function () {
+                // The 'this' is a select elelement
+                // (this option), is the option from the select
+                // (this option: selected), the selected option from select element
+                var selectedValue = $("#lstdynamicObj option:selected").val();
+                var selectedText = $("#lstdynamicObj option:selected").text();
+                alert('Selected Value = ' + selectedValue + '  and Selected Text = ' + selectedText);
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                Number 1
+            </td>
+            <td>
+                <input type="text" id="txtn1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Number 2
+            </td>
+            <td>
+                <input type="text" id="txtn2" />
+            </td>
+            <td>
+                Result
+            </td>
+            <td>
+                <input type="text" id="txtres" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="btnClear" value="Clear" />
+            </td>
+            <td>
+                <input type="button" id="btnAdd" value="Add" />
+            </td>
+        </tr>
+    </table>
+    <br />
+    Static List: <br />
+    <select id="lstnames">
+        <option value="10">Tejas</option>
+        <option value="20">Mahesh</option>
+        <option value="30">Ramesh</option>
+        <option value="40">Ram</option>
+        <option value="50">Sabnis</option>
+    </select>
+    <br />
+    Dynamic List: <br />
+    <select id="lstdynamic"></select>
+
+    <br />
+    Dynamic List of Objects: <br />
+    <select id="lstdynamicObj"></select>
+</body>
+</html>
