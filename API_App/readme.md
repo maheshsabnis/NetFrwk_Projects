@@ -44,3 +44,6 @@
 		- Install Package
 		- Usie HttpClient class
 	- System.Web.WebClient
+
+- When a Pure JavaScript Client App (jQuery, Angular, React, Vue, etc.) are tryinh to Access the REST APIs, the REST API will generate the Cross-Origin-Resource-Sharing (CORS) error and this will prevent the response to the JS Client. To avoid this, the WEB API (REST APIs) MUST be configure to enable CORS Policy 
+	- Install the Microsoft.AspNet.WebApi.Cors package

@@ -6,9 +6,16 @@ using System.Net.Http;
 using System.Web.Http;
 using Application.Entities;
 using Application.DataAccess;
+using System.Web.Http.Cors;
+
 namespace API_App.Controllers
 {
-
+    /// <summary>
+    /// Set the Controller that support Calls from JavaScript Client
+    /// Allow Any Origin, Allow Any Header, and allow any method
+    /// *,*,*
+    /// </summary>
+    [EnableCors("*", "*", "*")]
     public class DepartmentController : ApiController
     {
         // USe the Dependency
@@ -128,9 +135,11 @@ namespace API_App.Controllers
             try
             {
                 var department = deptDbServ.Delete(id);
+                
                 if (department == null)
                 {
                     return NotFound();
+                
                 }
                 return Ok(department);
             }

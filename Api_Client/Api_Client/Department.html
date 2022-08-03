@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#btnclear").on('click', function () {
+                $(".form-control").val('');
+            });
+
+            $("#btnsave").on('click', function () {
+                // The POST Request
+                // Create a Data object by accepting data from UI
+
+                var dept = {
+                    DeptNo: $("#txtdno").val(),
+                    DeptName: $("#txtdname").val(),
+                    Location: $("#txtloc").val(),
+                    Capacity: $("#txtcap").val()
+                };
+
+                // PAss the data in HTTP Request Body
+                $.ajax({
+                    url: 'https://localhost:44365/api/Department',
+                    type: 'POST',
+                    data:dept,
+                    ContentType: 'application/json',
+                    datatype:'json'
+                }).done(function(resp){
+                    $("#dvstatus").html('Data is added successfully');
+                    getDepartments();
+                });
+            });
+            $("#btnupdate").on('click', function () {
+
+                var dept = {
+                    DeptNo: $("#txtdno").val(),
+                    DeptName: $("#txtdname").val(),
+                    Location: $("#txtloc").val(),
+                    Capacity: $("#txtcap").val()
+                };
+
+                // PAss the data in HTTP Request Body
+                $.ajax({
+                    url: 'https://localhost:44365/api/Department/'+ dept.DeptNo,
+                    type: 'PUT',
+                    data: dept,
+                    ContentType: 'application/json',
+                    datatype: 'json'
+                }).done(function (resp) {
+                    $("#dvstatus").html('Data is updated successfully');
+                    getDepartments();
+                });
+            });
+            $("#btndelete").on('click', function () {
+                var dno = parseInt($("#txtdno").val());
+                $.ajax({
+                    url: 'https://localhost:44365/api/Department/' + dno,
+                    type: 'DELETE'
+                }).done(function (response) {
+                    
+                    $("#dvstatus").html('Data is deleted successfully');
+                    getDepartments();
+                });
+            });
+
+
+            getDepartments();
+            function getDepartments() {
+                $.ajax({
+                    url: 'https://localhost:44365/api/Department',
+                    type:'GET'
+                }).done(function (response) {
+                    console.log(JSON.stringify(response));
+                    generateTableHeaders(response[0]);
+                    generateTableBody(response);
+                });
+            }
+
+            $("#txtdno").on('change', function () {
+                // select the DeptNo entered into the txtdno
+                var dno = parseInt($(this).val());
+                $.ajax({
+                    url: 'https://localhost:44365/api/Department/'+ dno,
+                    type: 'GET'
+                }).done(function (response) {
+                    $("#txtdname").val(response.DeptName);
+                    $("#txtloc").val(response.Location);
+                    $("#txtcap").val(response.Capacity);
+                                     
+                });
+            });
+
+            function generateTableHeaders(record) {
+                var keys = Object.keys(record);
+                var headers = '<tr>';
+                $.each(keys, function (idx, key) {
+                    headers += '<th>' + key + '</th>'
+                });
+                headers += '</tr>';
+
+                $("#thead").html(headers);
+            }
+
+
+            function generateTableBody(records) {
+                var keys = Object.keys(records[0]);
+                // 1.a geneerate a row 
+                var tr = '<tr>';
+                // 1. iterate over each record of the array
+                $.each(records, function (index, record) {
+                    // 1.b. iterate over each key of the record and read its value
+                    $.each(keys, function (idx, key) {
+                        tr += '<td>' + record[key] + '</td>';
+                    });
+                    // 1.c. Complete the tr
+                    tr += '</tr>';
+
+                });
+                // 2. add the tr in tbody
+                $("#tbody").html(tr);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center">Department CRUD Using REST APIs</h1>
+    <div class="container">
+        <div class="form-group">
+            <label>DeptNo</label>
+            <input type="text" id="txtdno" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Dept Name</label>
+            <input type="text" id="txtdname" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" id="txtloc" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Capacity</label>
+            <input type="text" id="txtcap" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="button"  id="btnclear" value="Clear" class="btn btn-warning" />
+            <input type="button"  id="btnsave" value="Save" class="btn btn-success" />
+            <input type="button"  id="btnupdate" value="Update" class="btn btn-primary" />
+            <input type="button"  id="btndelete" value="Delete" class="btn btn-danger" />
+        </div>
+    </div>
+    <br/>
+    <div class="container" id="dvstatus"></div>
+    <hr/>
+    <div class="container">
+        <table class="table table-bordred table-striped">
+           <thead id="thead"></thead>
+           <tbody id="tbody"></tbody>  
+        </table>
+    </div>
+</body>
+</html>
