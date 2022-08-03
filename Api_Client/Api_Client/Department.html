@@ -25,7 +25,7 @@
 
                 // PAss the data in HTTP Request Body
                 $.ajax({
-                    url: 'https://localhost:44365/api/Department',
+                    url: 'https://apiappukgserver.azurewebsites.net/api/Department',
                     type: 'POST',
                     data:dept,
                     ContentType: 'application/json',
@@ -46,7 +46,7 @@
 
                 // PAss the data in HTTP Request Body
                 $.ajax({
-                    url: 'https://localhost:44365/api/Department/'+ dept.DeptNo,
+                    url: 'https://apiappukgserver.azurewebsites.net/api/Department/'+ dept.DeptNo,
                     type: 'PUT',
                     data: dept,
                     ContentType: 'application/json',
@@ -59,7 +59,7 @@
             $("#btndelete").on('click', function () {
                 var dno = parseInt($("#txtdno").val());
                 $.ajax({
-                    url: 'https://localhost:44365/api/Department/' + dno,
+                    url: 'https://apiappukgserver.azurewebsites.net/api/Department/' + dno,
                     type: 'DELETE'
                 }).done(function (response) {
                     
@@ -72,7 +72,7 @@
             getDepartments();
             function getDepartments() {
                 $.ajax({
-                    url: 'https://localhost:44365/api/Department',
+                    url: 'https://apiappukgserver.azurewebsites.net/api/Department',
                     type:'GET'
                 }).done(function (response) {
                     console.log(JSON.stringify(response));
@@ -85,7 +85,7 @@
                 // select the DeptNo entered into the txtdno
                 var dno = parseInt($(this).val());
                 $.ajax({
-                    url: 'https://localhost:44365/api/Department/'+ dno,
+                    url: 'https://apiappukgserver.azurewebsites.net/api/Department/'+ dno,
                     type: 'GET'
                 }).done(function (response) {
                     $("#txtdname").val(response.DeptName);

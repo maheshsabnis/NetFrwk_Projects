@@ -47,3 +47,16 @@
 
 - When a Pure JavaScript Client App (jQuery, Angular, React, Vue, etc.) are tryinh to Access the REST APIs, the REST API will generate the Cross-Origin-Resource-Sharing (CORS) error and this will prevent the response to the JS Client. To avoid this, the WEB API (REST APIs) MUST be configure to enable CORS Policy 
 	- Install the Microsoft.AspNet.WebApi.Cors package
+
+
+- Deployment of the Application
+	- Local Deployment on IIS aka On-Premises Deployment
+		- On the Server Machine i.e. Windows Server 2012+, The IIS MUST be configured and Possibly instalkl SQL Server
+		- On IIS Create an Application-Pool targeteed to .NET Framework 4.0
+		- COnfigure the IISAPPOOL as a User in SQL Server Database
+		- Create a Web Site under this Application-Pool
+		- Public the ASP.NET Web Form, ASP.NET MVC , and WEB API app on this this Web-Site
+	- Cloud Deployment Azure
+		- Deploye the Database on Azure SQL
+		- Change the Connection String in WebForms, MVC, and WEb API Project and test it
+		- Publish the WebForms, MVC, and WEb API app on Cloud

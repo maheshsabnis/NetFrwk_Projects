@@ -14,7 +14,7 @@ namespace Application.DataAccess
         SqlCommand Cmd;
         public EmployeeDataAccess()
         {
-            Conn = new SqlConnection("Data Source=.;Initial Catalog=UCompany;Integrated Security=SSPI");
+            Conn = new SqlConnection("Data Source=.;Initial Catalog=UCompany;Integrated Security=SSPI;");
         }
         Employee IDataAccess<Employee, int>.Craete(Employee entity)
         {
