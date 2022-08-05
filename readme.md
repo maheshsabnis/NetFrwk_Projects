@@ -952,3 +952,81 @@ NOTE: ONCE A VARIABLE IS DECLARED (PRIMTIVE OR CUSTOM STYPE), PLEASE SET SOME IN
 		- When the User/Custom Control is used on Page use the '@Register' Directive
 		- Security
 2. ASP.NET Mode-View-Controller (MVC)
+
+# ASP.NET Web App Security
+- AUthentication and Authorization
+	- AUthentication: User Credentials are used to provide an access of the application to the client
+	- Authorization: Assign the Role to the user and provide a controled access of the applciation to the client
+- Individual User Authentication
+	- ASP.NET Identity
+		- Ready-to-Use set of Classes for User and Role Management
+			- Microsoft.AspNet.Identity.EntityFramework
+				- IdentityUser, used to maintain Application User Information
+				- IdentityRole, used to maintain Application Role Information
+				- UserManager<IdentityUser>, used to create and manage Application Users and stored them in DB
+				- RoleManager<IdentityRole>, used to create and Manage Application Roles and stored them in DB
+				- SignInManager<IdentityUser>, used to maange SignIn, SignOut
+		- The OpenAPI Security COnfiguration with ASP.NET Project
+			- Mapped these classes with Opn-Web-Interface-For-DotNet (OWIN)
+		- Ready-to-Use SQL Server Table those stored Security Information
+			- Tables in Database
+				- AspNetUsers
+				- AspNetRoles
+				- AspNetUsersInRole
+	- Using Custom Security for the Application
+		- Product Owner is free to decide the security Approach, Database ane mechanism of Security Configuration
+		- Use any Database for User and Role Management
+		- Use any mechanism for Data Access e.g. ADO.NET, NHibernate, EntityFramework, etc.
+		- While using Custom Security makes sure that, the Configuration of Role Based Access MUST be done using Web.Config file as follows
+```` xml
+	<!--Definition of Role Based Access To VArious Sections (Folders) os Web App-->
+<!--location path="Admin": Means the 'Admin' folder-->	
+	<location path="Admin">
+		<system.web>
+			<!--Role BAsed Configuration-->
+			<authorization>
+				<!--Only allow the Admin Role Users-->
+				<allow roles="Admin" />
+				<!--Deny all other roles and Users-->
+				<deny users="*" />
+			</authorization>
+		</system.web>
+	</location>
+	<location path="Manager">
+		<system.web>
+			<authorization>
+				<allow roles="Manager" />
+				<deny users="*" />
+			</authorization>
+		</system.web>
+	</location>
+	<location path="Clerk">
+		<system.web>
+			<authorization>
+				<allow roles="Clerk" />
+				<deny users="*" />
+			</authorization>
+		</system.web>
+	</location>
+
+````
+	- Use the following Configuration for the Forms Authentication and Redirect to Login Page. here the Default page itself is a login Page  
+```` xml
+  <!--Authentication-->
+	  <authentication mode="Forms">
+		  <!--Login Page-->
+		  <forms name="homelogin" loginUrl="Default.aspx" protection="All" timeout="90" />
+	  </authentication>
+	  <authorization>
+		  <allow users="*" />
+	  </authorization>
+    <compilation debug="true" targetFramework="4.8" />
+  <!--Provide a Maximum Thread Out time for Redirection to the Next Page afetr login takes place-->
+	  <httpRuntime useFullyQualifiedRedirectUrl="true" maxRequestLength="8192" requestLengthDiskThreshold="8192" executionTimeout="108000" shutdownTimeout="108000" targetFramework="4.8"></httpRuntime>
+````
+
+- Microsoft Identity Platform
+	- Using Azure Cloud AD (aka AzureAD)
+	- Used when the App is deployed on Azure 
+
+- Windows

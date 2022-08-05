@@ -1,4 +1,11 @@
+// The Contract with the Hosting Environment
 var builder = WebApplication.CreateBuilder(args);
+// The 'builder' object, the object whihc is a Container for following
+// 1. Dependency Services
+    // builder.Services
+// 2. Middlewares
+    // builder.Build()
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
